@@ -36,7 +36,7 @@ git add .
 
 git commit -m "Alteração em 03112026"
 
-
+git push origin main
 
 .......................
 git commit -m "Atualização de Aula999 - Apostila", exercício separadores 
