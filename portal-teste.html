@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portal de Ensino e Recursos Educacionais de Engenharia da UESC.">
+  <title>Engenharia UESC | Portal de Ensino</title>
+  <style>
+    :root { --navy:#123b61; --dark:#082d4d; --muted:#64748b; --line:#e2e8f0; --bg:#f7f9fb; --white:#fff; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Arial,Helvetica,sans-serif; color:#263747; background:var(--bg); }
+    a { color:inherit; text-decoration:none; }
+    button { font:inherit; cursor:pointer; }
+    .header { position:sticky; top:0; z-index:20; background:var(--white); border-bottom:1px solid var(--line); box-shadow:0 2px 10px #123b6108; }
+    .header-inner { min-height:76px; display:flex; align-items:center; gap:16px; padding:12px 24px; }
+    .menu-toggle { display:none; border:1px solid var(--line); border-radius:8px; background:white; color:var(--navy); padding:9px 12px; font-size:20px; }
+    .mark { width:46px; height:46px; background:var(--dark); color:white; border-radius:11px; display:grid; place-items:center; flex:none; }
+    .brand { min-width:0; }
+    .brand strong { display:block; font-size:22px; color:var(--dark); line-height:1.2; }
+    .brand span { display:block; color:var(--muted); font-size:12px; margin-top:3px; }
+    .top-links { display:flex; align-items:center; gap:22px; margin-left:auto; font-size:14px; color:#425466; }
+    .top-links a:hover,.side-links a:hover { color:var(--navy); }
+    .layout { display:grid; grid-template-columns:258px minmax(0,1fr); min-height:calc(100vh - 76px); }
+    .sidebar { background:white; border-right:1px solid var(--line); padding:27px 16px; }
+    .side-heading { font-size:12px; letter-spacing:.07em; color:#7b8794; font-weight:bold; margin:0 12px 14px; }
+    .side-links { display:grid; gap:5px; }
+    .side-links a { padding:12px 14px; border-radius:7px; font-size:14px; color:#4b5563; }
+    .side-links a.active { background:#eaf1f7; color:var(--dark); font-weight:bold; }
+    .sidebar-note { margin:25px 12px; font-size:12px; line-height:1.6; color:var(--muted); }
+    main { width:100%; max-width:1180px; padding:38px 40px; margin:0 auto; }
+    .panel { background:white; border:1px solid var(--line); border-radius:16px; padding:38px; box-shadow:0 4px 14px #123b610a; }
+    .eyebrow { display:inline-block; background:#eaf1f7; color:var(--navy); padding:7px 12px; border-radius:20px; font-size:12px; font-weight:bold; }
+    h1 { color:var(--dark); font-size:clamp(28px,3vw,38px); margin:20px 0 12px; line-height:1.18; }
+    .intro { color:#536476; font-size:17px; line-height:1.75; max-width:780px; margin:0; }
+    .placeholder { margin-top:26px; padding:24px; background:#f8fafc; border:1px dashed #cbd5e1; border-radius:12px; }
+    .placeholder h2 { color:var(--dark); font-size:19px; margin:0 0 10px; }
+    .placeholder p { margin:0; line-height:1.7; color:#64748b; }
+    footer { margin-top:22px; text-align:center; color:#7a8795; font-size:12px; }
+    .backdrop { display:none; }
+    @media(max-width:950px) {
+      .top-links { display:none; }
+      .menu-toggle { display:block; }
+      .layout { display:block; }
+      .sidebar { position:fixed; top:76px; bottom:0; left:0; width:270px; z-index:30; transform:translateX(-100%); transition:transform .2s ease; overflow-y:auto; }
+      .sidebar.open { transform:translateX(0); }
+      .backdrop.open { display:block; position:fixed; inset:76px 0 0; background:#0006; z-index:25; }
+      main { padding:24px 18px; }
+      .panel { padding:26px 22px; }
+    }
+    @media(max-width:450px) { .header-inner { padding:12px; gap:10px; } .brand strong { font-size:19px; } .brand span { font-size:10px; } .mark { width:40px; height:40px; } }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="sidebar">☰</button>
+      <div class="mark" aria-hidden="true">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 21L13 10L24 17" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <path d="M13 10V23H24" stroke="#80C6E8" stroke-width="2" stroke-linecap="round"/>
+          <circle cx="5" cy="21" r="3" fill="white"/><circle cx="13" cy="10" r="3" fill="#80C6E8"/><circle cx="24" cy="17" r="3" fill="#4BC2A2"/>
+        </svg>
+      </div>
+      <div class="brand"><strong>Engenharia UESC</strong><span>Portal de Ensino e Recursos Educacionais</span></div>
+      <nav class="top-links" aria-label="Navegação superior">
+        <a href="portal-teste.html" aria-current="page">Início</a>
+        <a href="index.html">Disciplinas (site atual)</a>
+        <a href="https://github.com/Edwards1969/portal-engenharia-uesc" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </nav>
+    </div>
+  </header>
+  <div class="backdrop" id="backdrop"></div>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar" aria-label="Menu lateral">
+      <p class="side-heading">PÁGINAS DO PORTAL</p>
+      <nav class="side-links" aria-label="Navegação lateral">
+        <a class="active" href="portal-teste.html" aria-current="page">⌂ &nbsp; Página inicial</a>
+        <a href="index.html">▤ &nbsp; Disciplinas (site atual)</a>
+      </nav>
+      <p class="sidebar-note">Em breve: notebooks, livros, projetos educacionais e ferramentas. Esses links serão adicionados quando as páginas estiverem prontas.</p>
+    </aside>
+    <main>
+      <section class="panel">
+        <span class="eyebrow">Ensino de Engenharia Química</span>
+        <h1>Bem-vindo ao Engenharia UESC</h1>
+        <p class="intro">Um espaço dedicado à organização e ao acesso a aulas, exercícios, notebooks e recursos educacionais para o estudo da Engenharia Química.</p>
+        <div class="placeholder">
+          <h2>Primeira etapa: estrutura da interface</h2>
+          <p>Este é um ambiente experimental. Nesta versão estamos avaliando o cabeçalho, o menu lateral, as cores e a adaptação a diferentes tamanhos de tela. As disciplinas serão incorporadas na próxima etapa.</p>
+        </div>
+      </section>
+      <footer>Engenharia UESC • Portal de Ensino e Recursos Educacionais</footer>
+    </main>
+  </div>
+  <script>
+    const toggle=document.getElementById('menuToggle');
+    const sidebar=document.getElementById('sidebar');
+    const backdrop=document.getElementById('backdrop');
+    function setMenu(open){ sidebar.classList.toggle('open',open); backdrop.classList.toggle('open',open); toggle.setAttribute('aria-expanded',String(open)); toggle.setAttribute('aria-label',open?'Fechar menu':'Abrir menu'); }
+    toggle.addEventListener('click',()=>setMenu(!sidebar.classList.contains('open')));
+    backdrop.addEventListener('click',()=>setMenu(false));
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
+  </script>
+</body>
+</html>
