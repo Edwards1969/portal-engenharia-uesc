@@ -32,6 +32,21 @@
     .eyebrow { display:inline-block; background:#eaf1f7; color:var(--navy); padding:7px 12px; border-radius:20px; font-size:12px; font-weight:bold; }
     h1 { color:var(--dark); font-size:clamp(28px,3vw,38px); margin:20px 0 12px; line-height:1.18; }
     .intro { color:#536476; font-size:17px; line-height:1.75; max-width:780px; margin:0; }
+    .search-wrap { margin-left:auto; width:min(340px,28vw); }
+    .search-wrap input { width:100%; padding:11px 13px; border:1px solid var(--line); border-radius:9px; background:#f6f8fa; font:inherit; font-size:14px; }
+    .search-wrap input:focus { outline:2px solid #a8c9df; background:white; }
+    .section-title { color:var(--dark); font-size:23px; margin:30px 0 8px; }
+    .section-note { color:var(--muted); font-size:14px; line-height:1.6; margin:0 0 18px; }
+    .cards { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:15px; }
+    .course[hidden] { display:none; }
+    .course { border:1px solid var(--line); border-radius:12px; padding:20px; background:white; }
+    .course small { color:var(--muted); font-weight:bold; letter-spacing:.03em; }
+    .course h3 { color:var(--dark); font-size:17px; line-height:1.4; margin:9px 0 16px; }
+    .course-links { display:flex; flex-wrap:wrap; gap:9px; }
+    .course-links a { color:var(--navy); background:#eef4f8; border-radius:6px; padding:8px 10px; font-size:13px; font-weight:bold; }
+    .course-links a:hover { background:#dceaf3; }
+    .course-links a:focus-visible,.side-links a:focus-visible { outline:2px solid #2873a2; outline-offset:2px; }
+    .no-results { display:none; color:var(--muted); padding:16px; }
     .placeholder { margin-top:26px; padding:24px; background:#f8fafc; border:1px dashed #cbd5e1; border-radius:12px; }
     .placeholder h2 { color:var(--dark); font-size:19px; margin:0 0 10px; }
     .placeholder p { margin:0; line-height:1.7; color:#64748b; }
@@ -39,6 +54,7 @@
     .backdrop { display:none; }
     @media(max-width:950px) {
       .top-links { display:none; }
+      .search-wrap { width:min(310px,40vw); }
       .menu-toggle { display:block; }
       .layout { display:block; }
       .sidebar { position:fixed; top:76px; bottom:0; left:0; width:270px; z-index:30; transform:translateX(-100%); transition:transform .2s ease; overflow-y:auto; }
@@ -47,6 +63,7 @@
       main { padding:24px 18px; }
       .panel { padding:26px 22px; }
     }
+    @media(max-width:650px) { .cards { grid-template-columns:1fr; } .search-wrap { order:5; width:100%; } .header-inner { flex-wrap:wrap; } }
     @media(max-width:450px) { .header-inner { padding:12px; gap:10px; } .brand strong { font-size:19px; } .brand span { font-size:10px; } .mark { width:40px; height:40px; } }
   </style>
 </head>
@@ -62,6 +79,7 @@
         </svg>
       </div>
       <div class="brand"><strong>Engenharia UESC</strong><span>Portal de Ensino e Recursos Educacionais</span></div>
+      <div class="search-wrap"><input id="search" type="search" aria-label="Pesquisar disciplinas" placeholder="Pesquisar disciplinas ou códigos..."></div>
       <nav class="top-links" aria-label="Navegação superior">
         <a href="portal-teste.html" aria-current="page">Início</a>
         <a href="index.html">Disciplinas (site atual)</a>
@@ -75,19 +93,38 @@
       <p class="side-heading">PÁGINAS DO PORTAL</p>
       <nav class="side-links" aria-label="Navegação lateral">
         <a class="active" href="portal-teste.html" aria-current="page">⌂ &nbsp; Página inicial</a>
-        <a href="index.html">▤ &nbsp; Disciplinas (site atual)</a>
+        <a href="#disciplinas">▤ &nbsp; Disciplinas</a>
+        <a href="index.html">↗ &nbsp; Site anterior</a>
       </nav>
       <p class="sidebar-note">Em breve: notebooks, livros, projetos educacionais e ferramentas. Esses links serão adicionados quando as páginas estiverem prontas.</p>
     </aside>
     <main>
       <section class="panel">
         <span class="eyebrow">Ensino de Engenharia Química</span>
-        <h1>Bem-vindo ao Engenharia UESC</h1>
+        <h1>Bem-vindo ao Portal Engenharia UESC</h1>
         <p class="intro">Um espaço dedicado à organização e ao acesso a aulas, exercícios, notebooks e recursos educacionais para o estudo da Engenharia Química.</p>
-        <div class="placeholder">
-          <h2>Primeira etapa: estrutura da interface</h2>
-          <p>Este é um ambiente experimental. Nesta versão estamos avaliando o cabeçalho, o menu lateral, as cores e a adaptação a diferentes tamanhos de tela. As disciplinas serão incorporadas na próxima etapa.</p>
+        <h2 class="section-title" id="disciplinas">Disciplinas</h2>
+        <p class="section-note">Selecione uma disciplina para consultar seus materiais. A busca filtra os cartões pelo código ou nome.</p>
+        <div class="cards" id="courseCards">
+          <article class="course" data-search="CET1011 engenharia auxiliada por computador">
+            <small>CET1011</small><h3>Engenharia Auxiliada por Computador</h3>
+            <div class="course-links"><a href="CET1011/index.html">Página da disciplina</a><a href="CET1011/AULAS/">Aulas</a><a href="CET1011/EXERCICIOS/">Exercícios</a><a href="CET1011/SLIDES/">Slides</a><a href="CET1011/VIDEOS/">Vídeos</a></div>
+          </article>
+          <article class="course" data-search="CET1012 modelagem, simulação e otimização de processos químicos">
+            <small>CET1012</small><h3>Modelagem, Simulação e Otimização de Processos Químicos</h3>
+            <div class="course-links"><a href="CET1012/index.html">Página da disciplina</a><a href="CET1012/AULAS/">Aulas</a><a href="CET1012/EXERCICIOS/">Exercícios</a><a href="CET1012/SLIDES/">Slides</a><a href="CET1012/VIDEOS/">Vídeos</a></div>
+          </article>
+          <article class="course" data-search="CET990 instrumentação e controle de qualidade">
+            <small>CET990</small><h3>Instrumentação e Controle de Qualidade</h3>
+            <div class="course-links"><a href="CET990/index.html">Página da disciplina</a><a href="CET990/AULAS/">Aulas</a><a href="CET990/EXERCICIOS/">Exercícios</a><a href="CET990/SLIDES/">Slides</a><a href="CET990/VIDEOS/">Vídeos</a></div>
+          </article>
+          <article class="course" data-search="CET999 introdução a controle de processos">
+            <small>CET999</small><h3>Introdução a Controle de Processos</h3>
+            <div class="course-links"><a href="CET999/index.html">Página da disciplina</a><a href="CET999/AULAS/">Aulas</a><a href="CET999/EXERCICIOS/">Exercícios</a><a href="CET999/SLIDES/">Slides</a><a href="CET999/VIDEOS/">Vídeos</a></div>
+          </article>
         </div>
+        <p class="no-results" id="noResults" role="status">Nenhuma disciplina encontrada. Tente outro termo.</p>
+        <p class="section-note" style="margin-top:20px">Os links mantêm os caminhos usados no portal anterior. A disponibilidade de cada material depende dos arquivos publicados em cada pasta.</p>
       </section>
       <footer>Engenharia UESC • Portal de Ensino e Recursos Educacionais</footer>
     </main>
@@ -97,6 +134,14 @@
     const sidebar=document.getElementById('sidebar');
     const backdrop=document.getElementById('backdrop');
     function setMenu(open){ sidebar.classList.toggle('open',open); backdrop.classList.toggle('open',open); toggle.setAttribute('aria-expanded',String(open)); toggle.setAttribute('aria-label',open?'Fechar menu':'Abrir menu'); }
+    const search=document.getElementById('search');
+    const courses=[...document.querySelectorAll('.course')];
+    search.addEventListener('input',()=>{
+      const term=search.value.trim().toLocaleLowerCase('pt-BR');
+      let visible=0;
+      courses.forEach(course=>{const match=course.dataset.search.toLocaleLowerCase('pt-BR').includes(term);course.hidden=!match;if(match)visible++;});
+      document.getElementById('noResults').style.display=visible?'none':'block';
+    });
     toggle.addEventListener('click',()=>setMenu(!sidebar.classList.contains('open')));
     backdrop.addEventListener('click',()=>setMenu(false));
     document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
