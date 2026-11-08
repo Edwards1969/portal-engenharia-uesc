@@ -30,7 +30,7 @@
     main { width:100%; max-width:1180px; padding:38px 40px; margin:0 auto; }
     .panel { background:white; border:1px solid var(--line); border-radius:16px; padding:38px; box-shadow:0 4px 14px #123b610a; }
     .eyebrow { display:inline-block; background:#eaf1f7; color:var(--navy); padding:7px 12px; border-radius:20px; font-size:12px; font-weight:bold; }
-    h1 { color:var(--dark); font-size:clamp(28px,3vw,38px); margin:20px 0 12px; line-height:1.18; }
+    h1 { color:var(--dark); font-size:clamp(26px,2.6vw,34px); margin:20px 0 12px; line-height:1.18; }
     .intro { color:#536476; font-size:17px; line-height:1.75; max-width:780px; margin:0; }
     .search-wrap { margin-left:auto; width:min(340px,28vw); }
     .search-wrap input { width:100%; padding:11px 13px; border:1px solid var(--line); border-radius:9px; background:#f6f8fa; font:inherit; font-size:14px; }
@@ -45,6 +45,10 @@
     .course-links { display:flex; flex-wrap:wrap; gap:9px; }
     .course-links a { color:var(--navy); background:#eef4f8; border-radius:6px; padding:8px 10px; font-size:13px; font-weight:bold; }
     .course-links a:hover { background:#dceaf3; }
+    .course-links a.primary { background:var(--navy); color:white; }
+    .course-links a.primary:hover { background:var(--dark); }
+    .section-anchor { scroll-margin-top:110px; }
+    .section-divider { margin:32px 0 0; border:0; border-top:1px solid var(--line); }
     .course-links a:focus-visible,.side-links a:focus-visible { outline:2px solid #2873a2; outline-offset:2px; }
     .no-results { display:none; color:var(--muted); padding:16px; }
     .placeholder { margin-top:26px; padding:24px; background:#f8fafc; border:1px dashed #cbd5e1; border-radius:12px; }
@@ -79,7 +83,7 @@
         </svg>
       </div>
       <div class="brand"><strong>Engenharia UESC</strong><span>Portal de Ensino e Recursos Educacionais</span></div>
-      <div class="search-wrap"><input id="search" type="search" aria-label="Pesquisar disciplinas" placeholder="Pesquisar disciplinas ou códigos..."></div>
+      <div class="search-wrap"><input id="search" type="search" aria-label="Pesquisar disciplinas" placeholder="Pesquisar disciplinas, recursos ou códigos..."></div>
       <nav class="top-links" aria-label="Navegação superior">
         <a href="portal-teste.html" aria-current="page">Início</a>
         <a href="index.html">Disciplinas (site atual)</a>
@@ -94,37 +98,55 @@
       <nav class="side-links" aria-label="Navegação lateral">
         <a class="active" href="portal-teste.html" aria-current="page">⌂ &nbsp; Página inicial</a>
         <a href="#disciplinas">▤ &nbsp; Disciplinas</a>
+        <a href="#complementares">⌘ &nbsp; Recursos complementares</a>
         <a href="index.html">↗ &nbsp; Site anterior</a>
       </nav>
-      <p class="sidebar-note">Em breve: notebooks, livros, projetos educacionais e ferramentas. Esses links serão adicionados quando as páginas estiverem prontas.</p>
+      <p class="sidebar-note">Em breve: biblioteca de notebooks, livros e projetos educacionais. As seções serão ativadas quando estiverem prontas.</p>
     </aside>
     <main>
       <section class="panel">
         <span class="eyebrow">Ensino de Engenharia Química</span>
         <h1>Bem-vindo ao Portal Engenharia UESC</h1>
         <p class="intro">Um espaço dedicado à organização e ao acesso a aulas, exercícios, notebooks e recursos educacionais para o estudo da Engenharia Química.</p>
-        <h2 class="section-title" id="disciplinas">Disciplinas</h2>
-        <p class="section-note">Selecione uma disciplina para consultar seus materiais. A busca filtra os cartões pelo código ou nome.</p>
+        <h2 class="section-title section-anchor" id="disciplinas">Disciplinas de Engenharia Química</h2>
+        <p class="section-note">Selecione uma disciplina para consultar seus materiais. A pesquisa localiza disciplinas e recursos complementares pelo código ou nome.</p>
         <div class="cards" id="courseCards">
           <article class="course" data-search="CET1011 engenharia auxiliada por computador">
             <small>CET1011</small><h3>Engenharia Auxiliada por Computador</h3>
-            <div class="course-links"><a href="CET1011/index.html">Página da disciplina</a><a href="CET1011/AULAS/">Aulas</a><a href="CET1011/EXERCICIOS/">Exercícios</a><a href="CET1011/SLIDES/">Slides</a><a href="CET1011/VIDEOS/">Vídeos</a></div>
+            <div class="course-links"><a class="primary" href="CET1011/index.html">Página da disciplina</a><a href="CET1011/AULAS/">Aulas</a><a href="CET1011/EXERCICIOS/">Exercícios</a><a href="CET1011/SLIDES/">Slides</a><a href="CET1011/VIDEOS/">Vídeos</a></div>
           </article>
           <article class="course" data-search="CET1012 modelagem, simulação e otimização de processos químicos">
             <small>CET1012</small><h3>Modelagem, Simulação e Otimização de Processos Químicos</h3>
-            <div class="course-links"><a href="CET1012/index.html">Página da disciplina</a><a href="CET1012/AULAS/">Aulas</a><a href="CET1012/EXERCICIOS/">Exercícios</a><a href="CET1012/SLIDES/">Slides</a><a href="CET1012/VIDEOS/">Vídeos</a></div>
+            <div class="course-links"><a class="primary" href="CET1012/index.html">Página da disciplina</a><a href="CET1012/AULAS/">Aulas</a><a href="CET1012/EXERCICIOS/">Exercícios</a><a href="CET1012/SLIDES/">Slides</a><a href="CET1012/VIDEOS/">Vídeos</a></div>
           </article>
           <article class="course" data-search="CET990 instrumentação e controle de qualidade">
             <small>CET990</small><h3>Instrumentação e Controle de Qualidade</h3>
-            <div class="course-links"><a href="CET990/index.html">Página da disciplina</a><a href="CET990/AULAS/">Aulas</a><a href="CET990/EXERCICIOS/">Exercícios</a><a href="CET990/SLIDES/">Slides</a><a href="CET990/VIDEOS/">Vídeos</a></div>
+            <div class="course-links"><a class="primary" href="CET990/index.html">Página da disciplina</a><a href="CET990/AULAS/">Aulas</a><a href="CET990/EXERCICIOS/">Exercícios</a><a href="CET990/SLIDES/">Slides</a><a href="CET990/VIDEOS/">Vídeos</a></div>
           </article>
           <article class="course" data-search="CET999 introdução a controle de processos">
             <small>CET999</small><h3>Introdução a Controle de Processos</h3>
-            <div class="course-links"><a href="CET999/index.html">Página da disciplina</a><a href="CET999/AULAS/">Aulas</a><a href="CET999/EXERCICIOS/">Exercícios</a><a href="CET999/SLIDES/">Slides</a><a href="CET999/VIDEOS/">Vídeos</a></div>
+            <div class="course-links"><a class="primary" href="CET999/index.html">Página da disciplina</a><a href="CET999/AULAS/">Aulas</a><a href="CET999/EXERCICIOS/">Exercícios</a><a href="CET999/SLIDES/">Slides</a><a href="CET999/VIDEOS/">Vídeos</a></div>
+          </article>
+          <article class="course" data-search="CET1006 controle de processos aplicado">
+            <small>CET1006</small><h3>Controle de Processos Aplicado</h3>
+            <div class="course-links"><a class="primary" href="https://github.com/Edwards1969/portal-engenharia-uesc/tree/main/CET1006" target="_blank" rel="noopener noreferrer">Ver materiais no GitHub</a></div>
           </article>
         </div>
-        <p class="no-results" id="noResults" role="status">Nenhuma disciplina encontrada. Tente outro termo.</p>
-        <p class="section-note" style="margin-top:20px">Os links mantêm os caminhos usados no portal anterior. A disponibilidade de cada material depende dos arquivos publicados em cada pasta.</p>
+        <hr class="section-divider">
+        <h2 class="section-title section-anchor" id="complementares">Recursos Educacionais Complementares</h2>
+        <p class="section-note">Conteúdos de apoio e aprofundamento, organizados separadamente das disciplinas curriculares.</p>
+        <div class="cards">
+          <article class="course" data-search="CET001 introdução a redes neurais inteligencia artificial aprendizado de maquina">
+            <small>CET001 · Recurso complementar</small><h3>Introdução a Redes Neurais</h3>
+            <div class="course-links"><a class="primary" href="https://github.com/Edwards1969/portal-engenharia-uesc/tree/main/CET001" target="_blank" rel="noopener noreferrer">Ver materiais no GitHub</a></div>
+          </article>
+          <article class="course" data-search="CET002 programação em python para as engenharias computação notebooks">
+            <small>CET002 · Recurso complementar</small><h3>Programação em Python para as Engenharias</h3>
+            <div class="course-links"><a class="primary" href="https://github.com/Edwards1969/portal-engenharia-uesc/tree/main/CET002" target="_blank" rel="noopener noreferrer">Ver materiais no GitHub</a></div>
+          </article>
+        </div>
+        <p class="no-results" id="noResults" role="status">Nenhum conteúdo encontrado. Tente outro termo.</p>
+        <p class="section-note" style="margin-top:20px">Os links antigos foram preservados nas quatro disciplinas já publicadas. Para os três novos conteúdos, o acesso leva às respectivas pastas no GitHub, até criarmos páginas de navegação próprias.</p>
       </section>
       <footer>Engenharia UESC • Portal de Ensino e Recursos Educacionais</footer>
     </main>
