@@ -1,0 +1,25 @@
+/* Engenharia UESC — Padrao tipografico v1 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+:root {
+  --fonte-portal: 'Inter', Arial, sans-serif;
+  --azul-titulo: #082c4b;
+  --azul-secundario: #173b5d;
+  --texto-portal: #344b63;
+  --texto-discreto: #63758b;
+  --fundo-portal: #f6f8fb;
+  --borda-portal: #dce5ef;
+}
+html { font-size: 16px; }
+body { font-family: var(--fonte-portal); color: var(--texto-portal); background: var(--fundo-portal); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { color: var(--azul-titulo); line-height: 1.25; letter-spacing: -0.025em; }
+h1 { font-size: clamp(2rem, 3vw, 2.5rem); font-weight: 800; }
+h2 { font-size: clamp(1.5rem, 2.2vw, 1.75rem); font-weight: 700; }
+h3 { font-size: 1.25rem; font-weight: 700; }
+p { font-size: 1rem; line-height: 1.65; }
+button, .btn, input, select { font: inherit; }
+button, .btn { font-size: .875rem; font-weight: 600; }
+nav, aside, .sidebar { font-size: .9375rem; }
+small, .muted, .metadata { font-size: .8125rem; color: var(--texto-discreto); }
+.brand-title { font-size: 1.5rem; font-weight: 700; color: var(--azul-titulo); line-height: 1.2; }
+.brand-subtitle { font-size: .8125rem; color: var(--texto-discreto); line-height: 1.4; }
+@media (max-width: 640px) { h1 { font-size: 2rem; } h2 { font-size: 1.5rem; } }
