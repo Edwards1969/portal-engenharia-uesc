@@ -2,126 +2,56 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Aulas - CET990</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aulas de Instrumentação e Controle de Qualidade — CET990, Engenharia UESC.">
+  <title>Aulas | CET990 — Instrumentação e Controle de Qualidade</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-    header {
-      background-color: #28a745;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    main {
-      max-width: 1000px;
-      margin: 20px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      padding: 12px;
-      border-bottom: 1px solid #ddd;
-      text-align: left;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
-    button {
-      background-color: #28a745;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #218838;
-    }
-    .voltar {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 8px 15px;
-      background-color: #ccc;
-      border-radius: 4px;
-      color: black;
-      text-decoration: none;
-    }
-    .voltar:hover {
-      background-color: #bbb;
-    }
+    :root { --navy:#123b61; --dark:#082d4d; --muted:#64748b; --line:#e2e8f0; --bg:#f7f9fb; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Arial,Helvetica,sans-serif; background:var(--bg); color:#263747; line-height:1.65; }
+    header { background:white; border-bottom:1px solid var(--line); padding:20px max(22px,calc((100% - 1100px)/2)); }
+    .brand { color:var(--dark); font-size:23px; font-weight:700; }
+    .brand-sub { color:var(--muted); font-size:13px; }
+    main { max-width:1100px; margin:36px auto; padding:0 20px; }
+    .panel { background:white; border:1px solid var(--line); border-radius:16px; padding:36px; }
+    .tag { display:inline-block; padding:5px 13px; border-radius:20px; background:#eaf1f7; color:var(--navy); font-size:13px; font-weight:700; }
+    h1,h2,h3 { color:var(--dark); }
+    h1 { font-size:clamp(25px,3vw,33px); line-height:1.25; margin:18px 0 10px; }
+    h2 { font-size:22px; margin:34px 0 15px; }
+    .intro,.card p,.resource p { color:var(--muted); }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    .card,.resource { border:1px solid var(--line); border-radius:12px; padding:22px; }
+    .card h3 { margin:0 0 8px; font-size:20px; }
+    .card p { margin:0 0 18px; min-height:52px; }
+    .btn { display:inline-block; padding:9px 15px; background:var(--navy); color:white; border-radius:7px; text-decoration:none; font-size:14px; font-weight:700; }
+    .btn:hover,.btn:focus-visible { background:var(--dark); }
+    .resource p { margin:5px 0 15px; }
+    .back { display:inline-block; margin-top:28px; color:var(--navy); font-weight:700; text-decoration:none; }
+    footer { text-align:center; padding:12px 20px 28px; color:var(--muted); font-size:12px; }
+    @media(max-width:680px) { .grid { grid-template-columns:1fr; } .panel { padding:23px; } .card p { min-height:0; } }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Aulas - CET1011</h1>
-  </header>
-
-  <main>
-    <h2>Lista de Aulas</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Nome do Arquivo</th>
-          <th>Ação</th>
-        </tr>
-      </thead>
-      <tbody id="fileList"></tbody>
-    </table>
-
-    <a class="voltar" href="../index.html">⬅ Voltar para a disciplina</a>
-  </main>
-
-  <script>
-    // Lista de arquivos de aula
-    const arquivos = [
-      "Aula1_CET990.pdf",
-      "Aula2_CET990.pdf",
-      "Aula3_CET990.pdf",
-      "Aula4_CET990.pdf",
-      "Aula5_CET990.pdf",
-      "Aula6_CET990.pdf",
-      "Aula7_CET990.pdf",
-      "Aula8_CET990.pdf",
-      "Aula9_CET990.pdf",
-      "Aula10_CET990.pdf",
-    ];
-
-    const fileList = document.getElementById("fileList");
-
-    arquivos.forEach(file => {
-      const tr = document.createElement("tr");
-
-      const tdName = document.createElement("td");
-      tdName.textContent = file;
-
-      const tdAction = document.createElement("td");
-      const btn = document.createElement("button");
-      btn.textContent = "Abrir";
-      btn.onclick = () => {
-        const ext = file.split('.').pop().toLowerCase();
-        if (ext === "pdf" || ext === "docx") {
-          window.open(file, "_blank");
-        } else {
-          alert("Formato não suportado. Apenas PDF e DOCX.");
-        }
-      };
-      tdAction.appendChild(btn);
-
-      tr.appendChild(tdName);
-      tr.appendChild(tdAction);
-      fileList.appendChild(tr);
-    });
-  </script>
+  <header><div class="brand">Engenharia UESC</div><div class="brand-sub">Portal de Ensino e Recursos Educacionais</div></header>
+  <main><section class="panel">
+    <span class="tag">CET990 · Aulas</span>
+    <h1>Instrumentação e Controle de Qualidade</h1>
+    <p class="intro">Consulte os materiais teóricos e computacionais organizados por assunto. Os documentos originais permanecem disponíveis em suas respectivas pastas.</p>
+    <h2>Conteúdos de aula</h2>
+    <div class="grid">
+      <article class="card"><h3>Nível</h3><p>Medição de nível, geometria de tanques e aplicações computacionais.</p><a class="btn" href="NIVEL/index.html">Consultar aulas</a></article>
+      <article class="card"><h3>Pressão</h3><p>Instrumentos de pressão e monitoramento de processos.</p><a class="btn" href="PRESSAO/index.html">Consultar aulas</a></article>
+      <article class="card"><h3>Temperatura</h3><p>Sensores de temperatura e estudos computacionais.</p><a class="btn" href="TEMPERATURA/index.html">Consultar aulas</a></article>
+      <article class="card"><h3>Vazão</h3><p>Medição de vazão e aplicações de instrumentação.</p><a class="btn" href="VAZAO/index.html">Consultar aulas</a></article>
+    </div>
+    <h2>Material introdutório</h2>
+    <div class="resource">
+      <strong>Instalação do Anaconda e Spyder</strong>
+      <p>Orientações para preparar o ambiente de programação Python.</p>
+      <a class="btn" href="Aula-Instalacao-Anaconda-Spyder.pdf" target="_blank" rel="noopener noreferrer">Visualizar PDF</a>
+    </div>
+    <a class="back" href="../index.html">← Voltar para a disciplina CET990</a>
+  </section></main>
+  <footer>Engenharia UESC — Portal de Ensino e Recursos Educacionais</footer>
 </body>
 </html>
-
