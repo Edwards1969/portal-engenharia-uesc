@@ -19,7 +19,7 @@ git add .
 3. Criar um commit com uma mensagem que explique a alteração
 
 git commit -m "Mensagem clara e objetiva sobre o que foi modificado/adicionado"
-
+git commit -m "09112026"
 .................................................
 4. Enviar (push) as alterações para o repositório remoto no GitHub
 
