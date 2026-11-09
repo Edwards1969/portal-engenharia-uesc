@@ -1,125 +1,276 @@
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Disciplina CET1011 - Acesso</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Aulas | CET990 — Instrumentação e Controle de Qualidade</title>
+
   <style>
+    :root {
+      --azul: #0b2e4e;
+      --azul-botao: #143e65;
+      --fundo: #f4f7fa;
+      --borda: #dce5ee;
+      --texto: #17324d;
+      --secundario: #60748b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 30px;
-      background-color: #f4f4f4;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--fundo);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    header {
+      background: white;
+      border-bottom: 1px solid var(--borda);
+      padding: 20px 5%;
+    }
+
+    .cabecalho {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .portal {
+      color: var(--azul);
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .subtitulo {
+      color: var(--secundario);
+      font-size: 14px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .painel {
+      background: white;
+      border: 1px solid var(--borda);
+      border-radius: 16px;
+      padding: 36px;
+    }
+
+    .codigo {
+      display: inline-block;
+      background: #eaf1f7;
+      color: var(--azul);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: bold;
     }
 
     h1 {
-      text-align: center;
+      color: var(--azul);
+      font-size: 32px;
+      margin: 20px 0 8px;
     }
 
-    form {
-      max-width: 400px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    h2 {
+      color: var(--azul);
+      font-size: 23px;
+      margin-top: 34px;
     }
 
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+    .descricao {
+      color: var(--secundario);
+      margin-bottom: 28px;
     }
 
-    input[type="submit"] {
-      width: 100%;
-      padding: 10px;
-      background-color: #0074B7;
+    .grade {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .cartao {
+      border: 1px solid var(--borda);
+      border-radius: 12px;
+      padding: 24px;
+      background: white;
+    }
+
+    .cartao h3 {
+      margin: 0 0 8px;
+      color: var(--azul);
+      font-size: 20px;
+    }
+
+    .cartao p {
+      color: var(--secundario);
+      font-size: 15px;
+      margin: 0 0 20px;
+    }
+
+    .botao {
+      display: inline-block;
+      padding: 9px 16px;
+      background: var(--azul-botao);
       color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: bold;
     }
 
-    .link-voltar {
+    .botao:hover {
+      background: #245984;
+    }
+
+    .material {
+      border: 1px solid var(--borda);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .material p {
+      color: var(--secundario);
+      margin: 6px 0 16px;
+    }
+
+    .voltar {
+      display: inline-block;
+      margin-top: 30px;
+      color: var(--azul);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
       text-align: center;
-      margin-top: 20px;
+      color: var(--secundario);
+      font-size: 13px;
+      padding: 25px;
+    }
+
+    @media (max-width: 700px) {
+      .grade {
+        grid-template-columns: 1fr;
+      }
+
+      .painel {
+        padding: 22px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <h1>Disciplina CET1011 - Cadastro / Login</h1>
+  <header>
+    <div class="cabecalho">
+      <div class="portal">Engenharia UESC</div>
+      <div class="subtitulo">
+        Portal de Ensino e Recursos Educacionais
+      </div>
+    </div>
+  </header>
 
-  <!-- Formulário de Cadastro -->
-  <form id="formCadastro">
-    <h2>Cadastro de Aluno</h2>
-    <input type="text" id="nome" placeholder="Nome completo" required>
-    <input type="email" id="email" placeholder="E-mail institucional" required>
-    <input type="text" id="matricula" placeholder="Número de matrícula (senha)" required>
-    <input type="submit" value="Cadastrar">
-  </form>
+  <main>
+    <div class="painel">
 
-  <!-- Formulário de Login -->
-  <form id="formLogin">
-    <h2>Login</h2>
-    <input type="email" id="emailLogin" placeholder="E-mail institucional" required>
-    <input type="password" id="senhaLogin" placeholder="Número de matrícula" required>
-    <input type="submit" value="Entrar na disciplina">
-  </form>
+      <span class="codigo">CET990</span>
 
-  <div class="link-voltar">
-    <a href="../../index.html">Voltar à página inicial</a>
-  </div>
+      <h1>Instrumentação e Controle de Qualidade</h1>
 
-  <script>
-    // Armazenamento no localStorage
-    const formCadastro = document.getElementById('formCadastro');
-    const formLogin = document.getElementById('formLogin');
+      <p class="descricao">
+        Aulas e materiais didáticos organizados por assunto.
+        Selecione uma área para consultar os conteúdos
+        teóricos e computacionais.
+      </p>
 
-    formCadastro.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const nome = document.getElementById('nome').value;
-      const email = document.getElementById('email').value;
-      const matricula = document.getElementById('matricula').value;
+      <h2>Conteúdos de Aula</h2>
 
-      const usuario = {
-        nome: nome,
-        email: email,
-        senha: matricula
-      };
+      <div class="grade">
 
-      let usuarios = JSON.parse(localStorage.getItem('CET1011_usuarios')) || [];
+        <div class="cartao">
+          <h3>Nível</h3>
+          <p>
+            Instrumentação e técnicas de medição de nível.
+          </p>
+          <a class="botao" href="NIVEL/index.html">
+            Consultar aulas
+          </a>
+        </div>
 
-      const existe = usuarios.some(u => u.email === email);
-      if (existe) {
-        alert('Este e-mail já está cadastrado!');
-        return;
-      }
+        <div class="cartao">
+          <h3>Pressão</h3>
+          <p>
+            Instrumentação e técnicas de medição de pressão.
+          </p>
+          <a class="botao" href="PRESSAO/index.html">
+            Consultar aulas
+          </a>
+        </div>
 
-      usuarios.push(usuario);
-      localStorage.setItem('CET1011_usuarios', JSON.stringify(usuarios));
-      alert('Cadastro realizado com sucesso!');
-      formCadastro.reset();
-    });
+        <div class="cartao">
+          <h3>Temperatura</h3>
+          <p>
+            Sensores e técnicas de medição de temperatura.
+          </p>
+          <a class="botao" href="TEMPERATURA/index.html">
+            Consultar aulas
+          </a>
+        </div>
 
-    formLogin.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const email = document.getElementById('emailLogin').value;
-      const senha = document.getElementById('senhaLogin').value;
+        <div class="cartao">
+          <h3>Vazão</h3>
+          <p>
+            Instrumentação e técnicas de medição de vazão.
+          </p>
+          <a class="botao" href="VAZAO/index.html">
+            Consultar aulas
+          </a>
+        </div>
 
-      let usuarios = JSON.parse(localStorage.getItem('CET1011_usuarios')) || [];
+      </div>
 
-      const usuario = usuarios.find(u => u.email === email && u.senha === senha);
-      if (usuario) {
-        alert('Login bem-sucedido. Bem-vindo(a), ' + usuario.nome + '!');
-        window.location.href = "./aulas/index.html"; // redireciona para aulas
-      } else {
-        alert('E-mail ou matrícula incorretos.');
-      }
-    });
-  </script>
+      <h2>Material Introdutório</h2>
+
+      <div class="material">
+        <strong>Instalação do Anaconda e Spyder</strong>
+
+        <p>
+          Orientações para instalação e configuração
+          do ambiente de programação Python.
+        </p>
+
+        <a class="botao"
+           href="Aula-Instalacao-Anaconda-Spyder.pdf"
+           target="_blank"
+           rel="noopener noreferrer">
+          Visualizar PDF
+        </a>
+      </div>
+
+      <a class="voltar" href="../index.html">
+        ← Voltar para a disciplina CET990
+      </a>
+
+    </div>
+  </main>
+
+  <footer>
+    Engenharia UESC — Portal de Ensino e Recursos Educacionais
+  </footer>
+
 </body>
 </html>

@@ -1,129 +1,204 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Exercícios - CET1011</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercícios | CET990 — Instrumentação e Controle de Qualidade</title>
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
+    * {
+      box-sizing: border-box;
     }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fa;
+      color: #123451;
+      line-height: 1.6;
+    }
+
     header {
-      background-color: #ff9800;
-      color: white;
-      padding: 20px;
+      background: #ffffff;
+      border-bottom: 1px solid #dce5ef;
+      padding: 24px 30px;
       text-align: center;
     }
+
+    header h1 {
+      margin: 0;
+      color: #092e50;
+      font-size: 28px;
+    }
+
+    header p {
+      margin: 6px 0 0;
+      color: #526981;
+    }
+
     main {
-      max-width: 1000px;
-      margin: 20px auto;
-      padding: 20px;
+      max-width: 1100px;
+      margin: 35px auto;
+      padding: 30px;
       background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border: 1px solid #dce5ef;
+      border-radius: 14px;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
+
+    h2 {
+      color: #092e50;
+      font-size: 23px;
+      margin-top: 0;
     }
-    th, td {
-      padding: 12px;
-      border-bottom: 1px solid #ddd;
-      text-align: left;
+
+    .grade {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin: 24px 0 36px;
     }
-    th {
-      background-color: #f2f2f2;
+
+    .cartao {
+      border: 1px solid #dce5ef;
+      border-radius: 10px;
+      padding: 22px;
+      background: #ffffff;
     }
-    button {
-      background-color: #ff9800;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      cursor: pointer;
+
+    .cartao h3 {
+      margin: 0 0 10px;
+      color: #092e50;
     }
-    button:hover {
-      background-color: #e68900;
+
+    .cartao p {
+      margin: 0 0 18px;
+      color: #526981;
     }
-    .voltar {
+
+    a.botao {
       display: inline-block;
-      margin-top: 20px;
-      padding: 8px 15px;
-      background-color: #ccc;
-      border-radius: 4px;
-      color: black;
+      padding: 9px 15px;
+      background: #123b63;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    a.botao:hover {
+      background: #07538a;
+    }
+
+    .arquivo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 16px 0;
+      border-bottom: 1px solid #e1e8ef;
+    }
+
+    .arquivo span {
+      overflow-wrap: anywhere;
+    }
+
+    .voltar {
+      margin-top: 30px;
+      display: inline-block;
+      color: #123b63;
+      font-weight: bold;
       text-decoration: none;
     }
-    .voltar:hover {
-      background-color: #bbb;
+
+    @media (max-width: 700px) {
+      .grade {
+        grid-template-columns: 1fr;
+      }
+
+      main {
+        margin: 15px;
+        padding: 20px;
+      }
+
+      .arquivo {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
+
 <body>
+
   <header>
-    <h1>Exercícios - CET1011</h1>
+    <h1>CET990 — Instrumentação e Controle de Qualidade</h1>
+    <p>Exercícios e atividades de Engenharia</p>
   </header>
 
   <main>
-    <h2>Lista de Exercícios</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Nome do Arquivo</th>
-          <th>Ação</th>
-        </tr>
-      </thead>
-      <tbody id="fileList"></tbody>
-    </table>
 
-    <a class="voltar" href="../index.html">⬅ Voltar para a disciplina</a>
+    <h2>Exercícios por assunto</h2>
+
+    <p>
+      Selecione um dos assuntos para consultar os exercícios
+      e as atividades correspondentes.
+    </p>
+
+    <div class="grade">
+
+      <div class="cartao">
+        <h3>Nível</h3>
+        <p>Exercícios relacionados à medição e instrumentação de nível.</p>
+        <a class="botao" href="NIVEL/">Consultar exercícios</a>
+      </div>
+
+      <div class="cartao">
+        <h3>Pressão</h3>
+        <p>Exercícios relacionados à medição e instrumentação de pressão.</p>
+        <a class="botao" href="PRESSAO/">Consultar exercícios</a>
+      </div>
+
+      <div class="cartao">
+        <h3>Temperatura</h3>
+        <p>Exercícios relacionados à medição e instrumentação de temperatura.</p>
+        <a class="botao" href="TEMPERATURA/">Consultar exercícios</a>
+      </div>
+
+      <div class="cartao">
+        <h3>Vazão</h3>
+        <p>Exercícios relacionados à medição e instrumentação de vazão.</p>
+        <a class="botao" href="VAZAO/">Consultar exercícios</a>
+      </div>
+
+    </div>
+
+    <h2>Materiais gerais de exercícios</h2>
+
+    <div class="arquivo">
+      <span>Apostila de Instrumentação Computacional</span>
+      <a class="botao"
+         href="APOSTILA-INSTRUMENTACAO-COMPUTACIONAL.pdf"
+         target="_blank" rel="noopener">
+        Abrir PDF
+      </a>
+    </div>
+
+    <div class="arquivo">
+      <span>Laboratório 03 — Pressão e Nível</span>
+      <a class="botao"
+         href="LABORATORIO-03-PRESSAO-NIVEL.pdf"
+         target="_blank" rel="noopener">
+        Abrir PDF
+      </a>
+    </div>
+
+    <a class="voltar" href="../index.html">
+      ← Voltar para a disciplina CET990
+    </a>
+
   </main>
 
-  <script>
-    // Lista de arquivos de exercícios
-    const arquivos = [
-      "Exercicio_01_CET990.pdf",
-      "Exercicio_02_CET990.pdf",
-      "Exercicio_03_CET990.pdf",
-      "Exercicio_04_CET990.pdf",
-      "Exercicio_05_CET990.pdf",
-      "Exercicio_06_CET990.pdf",
-      "Exercicio_07_CET990.pdf",
-      "Exercicio_08_CET990.pdf",
-      "Exercicio_09_CET990.pdf",
-      "Exercicio_10_CET990.pdf",
-    ];
-
-    const fileList = document.getElementById("fileList");
-
-    arquivos.forEach(file => {
-      const tr = document.createElement("tr");
-
-      const tdName = document.createElement("td");
-      tdName.textContent = file;
-
-      const tdAction = document.createElement("td");
-      const btn = document.createElement("button");
-      btn.textContent = "Abrir";
-      btn.onclick = () => {
-        const ext = file.split('.').pop().toLowerCase();
-        if (ext === "pdf" || ext === "docx") {
-          window.open(file, "_blank");
-        } else {
-          alert("Formato não suportado. Apenas PDF e DOCX.");
-        }
-      };
-      tdAction.appendChild(btn);
-
-      tr.appendChild(tdName);
-      tr.appendChild(tdAction);
-      fileList.appendChild(tr);
-    });
-  </script>
 </body>
 </html>
-
-
-

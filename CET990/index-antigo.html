@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Disciplina CET1011 - Acesso</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #0074B7;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .link-voltar {
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Disciplina CET1011 - Cadastro / Login</h1>
+
+  <!-- Formulário de Cadastro -->
+  <form id="formCadastro">
+    <h2>Cadastro de Aluno</h2>
+    <input type="text" id="nome" placeholder="Nome completo" required>
+    <input type="email" id="email" placeholder="E-mail institucional" required>
+    <input type="text" id="matricula" placeholder="Número de matrícula (senha)" required>
+    <input type="submit" value="Cadastrar">
+  </form>
+
+  <!-- Formulário de Login -->
+  <form id="formLogin">
+    <h2>Login</h2>
+    <input type="email" id="emailLogin" placeholder="E-mail institucional" required>
+    <input type="password" id="senhaLogin" placeholder="Número de matrícula" required>
+    <input type="submit" value="Entrar na disciplina">
+  </form>
+
+  <div class="link-voltar">
+    <a href="../../index.html">Voltar à página inicial</a>
+  </div>
+
+  <script>
+    // Armazenamento no localStorage
+    const formCadastro = document.getElementById('formCadastro');
+    const formLogin = document.getElementById('formLogin');
+
+    formCadastro.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const matricula = document.getElementById('matricula').value;
+
+      const usuario = {
+        nome: nome,
+        email: email,
+        senha: matricula
+      };
+
+      let usuarios = JSON.parse(localStorage.getItem('CET1011_usuarios')) || [];
+
+      const existe = usuarios.some(u => u.email === email);
+      if (existe) {
+        alert('Este e-mail já está cadastrado!');
+        return;
+      }
+
+      usuarios.push(usuario);
+      localStorage.setItem('CET1011_usuarios', JSON.stringify(usuarios));
+      alert('Cadastro realizado com sucesso!');
+      formCadastro.reset();
+    });
+
+    formLogin.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const email = document.getElementById('emailLogin').value;
+      const senha = document.getElementById('senhaLogin').value;
+
+      let usuarios = JSON.parse(localStorage.getItem('CET1011_usuarios')) || [];
+
+      const usuario = usuarios.find(u => u.email === email && u.senha === senha);
+      if (usuario) {
+        alert('Login bem-sucedido. Bem-vindo(a), ' + usuario.nome + '!');
+        window.location.href = "./aulas/index.html"; // redireciona para aulas
+      } else {
+        alert('E-mail ou matrícula incorretos.');
+      }
+    });
+  </script>
+</body>
+</html>
