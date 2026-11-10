@@ -3,6 +3,7 @@ name: Atualizar catalogos didaticos
 on:
   push:
     branches:
+      - main
       - reformulacao-cet990
     paths:
       - 'CET*/AULAS/**'
