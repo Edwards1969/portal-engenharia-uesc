@@ -107,6 +107,17 @@
           "tipo": "csv"
         }
       ]
+    },
+    {
+      "id": "TRANSMISSORES",
+      "nome": "Transmissores",
+      "materiais": [
+        {
+          "titulo": "Aula 01 Transmissores",
+          "arquivo": "TRANSMISSORES/Aula-01-Transmissores.pdf",
+          "tipo": "pdf"
+        }
+      ]
     }
   ]
 }
