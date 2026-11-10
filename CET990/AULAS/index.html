@@ -10,7 +10,7 @@
     if (!response.ok) return; // mantém a página manual como alternativa
     const data = await response.json();
     if (!Array.isArray(data.assuntos) || !data.assuntos.length) return;
-    const base = 'https://github.com/Edwards1969/portal-engenharia-uesc/blob/reformulacao-cet990/CET990/' + data.categoria + '/';
+    const base = 'https://github.com/Edwards1969/portal-engenharia-uesc/blob/main/CET990/' + data.categoria + '/';
     const encodePath = path => path.split('/').map(encodeURIComponent).join('/');
     const escapeHTML = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
     const entries = data.assuntos.map((group,i) => {
