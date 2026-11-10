@@ -1,0 +1,112 @@
+{
+  "versao": 1,
+  "disciplina": "CET990",
+  "categoria": "AULAS",
+  "assuntos": [
+    {
+      "id": "GERAL",
+      "nome": "Introdução",
+      "materiais": [
+        {
+          "titulo": "Aula Instalacao Anaconda Spyder",
+          "arquivo": "Aula-Instalacao-Anaconda-Spyder.pdf",
+          "tipo": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "NIVEL",
+      "nome": "Nível",
+      "materiais": [
+        {
+          "titulo": "CET990 volume 1 deducao da area molhada tanque",
+          "arquivo": "NIVEL/CET990_volume_1_deducao_da_area_molhada_tanque.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "CET990 volume 2 tanque inclinado calculos",
+          "arquivo": "NIVEL/CET990_volume_2_tanque_inclinado_calculos.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "CET990 volume 3 Calculo tanque transporte",
+          "arquivo": "NIVEL/CET990_volume_3_Calculo_tanque_transporte.ipynb",
+          "tipo": "ipynb"
+        }
+      ]
+    },
+    {
+      "id": "VAZAO",
+      "nome": "Vazão",
+      "materiais": [
+        {
+          "titulo": "LABORATORIO 01 VAZAO",
+          "arquivo": "VAZAO/LABORATORIO-01-VAZAO.pdf",
+          "tipo": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "PRESSAO",
+      "nome": "Pressão",
+      "materiais": [
+        {
+          "titulo": "APOSTILA INSTRUMENTACAO COMPUTACIONAL",
+          "arquivo": "PRESSAO/APOSTILA-INSTRUMENTACAO-COMPUTACIONAL.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "titulo": "LABORATORIO 03 EXERCICIO 02 VERSAO PRATICA",
+          "arquivo": "PRESSAO/LABORATORIO-03-EXERCICIO-02-VERSAO-PRATICA.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "titulo": "monitoramento pressao reator quimico",
+          "arquivo": "PRESSAO/monitoramento-pressao-reator-quimico.ipynb",
+          "tipo": "ipynb"
+        }
+      ]
+    },
+    {
+      "id": "TEMPERATURA",
+      "nome": "Temperatura",
+      "materiais": [
+        {
+          "titulo": "CET990 Temperatura 1 gabarito PID volume",
+          "arquivo": "TEMPERATURA/CET990_Temperatura_1_gabarito_PID_volume.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "CET990 Temperatura 1 projeto PID volume",
+          "arquivo": "TEMPERATURA/CET990_Temperatura_1_projeto_PID_volume.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "exercicio 04 temperataura",
+          "arquivo": "TEMPERATURA/exercicio-04-temperataura.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "exercicio 05 temperatura",
+          "arquivo": "TEMPERATURA/exercicio-05-temperatura.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "LABORATORIO 02 TEMPERATURA",
+          "arquivo": "TEMPERATURA/LABORATORIO-02-TEMPERATURA.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "titulo": "reator",
+          "arquivo": "TEMPERATURA/reator.csv",
+          "tipo": "csv"
+        },
+        {
+          "titulo": "sensor ruidoso",
+          "arquivo": "TEMPERATURA/sensor_ruidoso.csv",
+          "tipo": "csv"
+        }
+      ]
+    }
+  ]
+}

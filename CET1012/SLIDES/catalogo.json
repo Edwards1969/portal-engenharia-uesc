@@ -1,0 +1,18 @@
+{
+  "versao": 1,
+  "disciplina": "CET1012",
+  "categoria": "SLIDES",
+  "assuntos": [
+    {
+      "id": "GERAL",
+      "nome": "Geral",
+      "materiais": [
+        {
+          "titulo": "Instalacao Spyder Aula",
+          "arquivo": "Instalacao-Spyder-Aula.pdf",
+          "tipo": "pdf"
+        }
+      ]
+    }
+  ]
+}

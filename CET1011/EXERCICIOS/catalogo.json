@@ -1,0 +1,33 @@
+{
+  "versao": 1,
+  "disciplina": "CET1011",
+  "categoria": "EXERCICIOS",
+  "assuntos": [
+    {
+      "id": "GERAL",
+      "nome": "Geral",
+      "materiais": [
+        {
+          "titulo": "APOSTILA SOLIDWORKS PROJETOS",
+          "arquivo": "APOSTILA-SOLIDWORKS-PROJETOS.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "titulo": "CET1011 Folha projeto solidworks",
+          "arquivo": "CET1011-Folha-projeto-solidworks.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "titulo": "CET1011 Exercicio P1 pecas",
+          "arquivo": "CET1011_Exercicio_P1_pecas.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "titulo": "Projeto vaso pressao P2",
+          "arquivo": "Projeto-vaso-pressao-P2.pdf",
+          "tipo": "pdf"
+        }
+      ]
+    }
+  ]
+}
