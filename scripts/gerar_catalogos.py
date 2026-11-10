@@ -26,24 +26,24 @@ def label(value):
 def title(filename):
     return re.sub(r"[-_]+", " ", Path(filename).stem).strip()
 
-def collect(folder):
+def collect(folder, category_root):
     items = []
     for file in sorted(folder.iterdir(), key=lambda x: x.name.casefold()):
         if file.is_file() and file.suffix.lower() in EXTS:
-            items.append({"titulo": title(file.name), "arquivo": file.relative_to(folder.parent).as_posix(),
+            items.append({"titulo": title(file.name), "arquivo": file.relative_to(category_root).as_posix(),
                           "tipo": file.suffix.lower().lstrip(".")})
     return items
 
 def generate(category_dir):
     groups = []
-    general = collect(category_dir)
+    general = collect(category_dir, category_dir)
     if general:
         groups.append({"id": "GERAL", "nome": "Introdução" if category_dir.name == "AULAS" else "Geral",
                        "materiais": general})
     for folder in category_dir.iterdir():
         if not folder.is_dir() or folder.name.lower() in IGNORE or folder.name.startswith("."):
             continue
-        items = collect(folder)
+        items = collect(folder, category_dir)
         if items:
             groups.append({"id": folder.name, "nome": label(folder.name), "materiais": items})
     groups.sort(key=lambda group: (ORDER.get(group["id"].upper(), 99), group["nome"].casefold()))
