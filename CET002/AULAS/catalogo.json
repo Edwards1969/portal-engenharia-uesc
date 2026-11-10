@@ -1,0 +1,190 @@
+{
+  "versao": 1,
+  "disciplina": "CET002",
+  "categoria": "AULAS",
+  "assuntos": [
+    {
+      "id": "GERAL",
+      "nome": "Introdução",
+      "materiais": [
+        {
+          "titulo": "00 Ambiente Python",
+          "arquivo": "00_Ambiente_Python.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "01 Laco For",
+          "arquivo": "01_Laco_For.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "02 Funcoes Python",
+          "arquivo": "02_Funcoes_Python.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "03 Organizacao de Funcoes",
+          "arquivo": "03_Organizacao_de_Funcoes.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "04 Funcoes Confiaveis",
+          "arquivo": "04_Funcoes_Confiaveis.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "05 Variaveis Locais e Globais",
+          "arquivo": "05_Variaveis_Locais_e_Globais.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "06 Estruturas Condicionais Completo",
+          "arquivo": "06_Estruturas_Condicionais_Completo.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "07 Laco While Completo",
+          "arquivo": "07_Laco_While_Completo.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "08 Listas Python Preenchido",
+          "arquivo": "08_Listas_Python_Preenchido.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "09 Tuplas e Dicionarios Preenchido",
+          "arquivo": "09_Tuplas_e_Dicionarios_Preenchido.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "10 Algoritmos Iterativos Completo",
+          "arquivo": "10_Algoritmos_Iterativos_Completo.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "11 Leitura e Escrita de Arquivos Completo",
+          "arquivo": "11_Leitura_e_Escrita_de_Arquivos_Completo.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "12 Introducao ao NumPy Completo",
+          "arquivo": "12_Introducao_ao_NumPy_Completo.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "13 Graficos com Matplotlib Completo",
+          "arquivo": "13_Graficos_com_Matplotlib_Completo.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "14 Analise de Dados com Pandas Completo",
+          "arquivo": "14_Analise_de_Dados_com_Pandas_Completo.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "15 Metodos Numericos Completo",
+          "arquivo": "15_Metodos_Numericos_Completo.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "16 Equacoes Diferenciais e Simulacao",
+          "arquivo": "16_Equacoes_Diferenciais_e_Simulacao.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "17 Balancos de Massa e Energia",
+          "arquivo": "17_Balancos_de_Massa_e_Energia.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "18 Mecanica dos Fluidos",
+          "arquivo": "18_Mecanica_dos_Fluidos.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "19 Transferencia de Calor",
+          "arquivo": "19_Transferencia_de_Calor.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "20 Instrumentacao e Sinais",
+          "arquivo": "20_Instrumentacao_e_Sinais.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "21 Controle de Processos",
+          "arquivo": "21_Controle_de_Processos.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "22 Otimizacao de Processos Quimicos",
+          "arquivo": "22_Otimizacao_de_Processos_Quimicos.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "23 Ciencia e Engenharia dos Materiais",
+          "arquivo": "23_Ciencia_e_Engenharia_dos_Materiais.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "24 Projeto Integrador",
+          "arquivo": "24_Projeto_Integrador.ipynb",
+          "tipo": "ipynb"
+        }
+      ]
+    },
+    {
+      "id": "dados_notebook11",
+      "nome": "Dados Notebook11",
+      "materiais": [
+        {
+          "titulo": "bateladas",
+          "arquivo": "dados_notebook11/bateladas.csv",
+          "tipo": "csv"
+        },
+        {
+          "titulo": "dureza",
+          "arquivo": "dados_notebook11/dureza.csv",
+          "tipo": "csv"
+        },
+        {
+          "titulo": "erros controle",
+          "arquivo": "dados_notebook11/erros_controle.csv",
+          "tipo": "csv"
+        },
+        {
+          "titulo": "pressao",
+          "arquivo": "dados_notebook11/pressao.csv",
+          "tipo": "csv"
+        },
+        {
+          "titulo": "qualidade",
+          "arquivo": "dados_notebook11/qualidade.csv",
+          "tipo": "csv"
+        }
+      ]
+    },
+    {
+      "id": "dados_notebook14",
+      "nome": "Dados Notebook14",
+      "materiais": [
+        {
+          "titulo": "controle qualidade",
+          "arquivo": "dados_notebook14/controle_qualidade.csv",
+          "tipo": "csv"
+        },
+        {
+          "titulo": "historico processo",
+          "arquivo": "dados_notebook14/historico_processo.csv",
+          "tipo": "csv"
+        },
+        {
+          "titulo": "resumo dureza lotes",
+          "arquivo": "dados_notebook14/resumo_dureza_lotes.csv",
+          "tipo": "csv"
+        }
+      ]
+    }
+  ]
+}

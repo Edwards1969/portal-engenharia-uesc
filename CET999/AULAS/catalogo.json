@@ -1,0 +1,48 @@
+{
+  "versao": 1,
+  "disciplina": "CET999",
+  "categoria": "AULAS",
+  "assuntos": [
+    {
+      "id": "GERAL",
+      "nome": "Introdução",
+      "materiais": [
+        {
+          "titulo": "APOSTILA CONTROLE PROCESSOS",
+          "arquivo": "APOSTILA-CONTROLE-PROCESSOS.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "titulo": "Aula  Separadores Exercicio 01",
+          "arquivo": "Aula- Separadores-Exercicio-01.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula CET999 Modelagem Dinâmica de um Tanque",
+          "arquivo": "Aula-CET999-Modelagem Dinâmica de um Tanque.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula Instalacao Anaconda Spyder",
+          "arquivo": "Aula-Instalacao-Anaconda-Spyder.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "titulo": "Aula Separador Trifasico Computadional",
+          "arquivo": "Aula-Separador-Trifasico-Computadional.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula Separadores Exercício 02",
+          "arquivo": "Aula-Separadores-Exercício-02.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Instalacao Spyder Aula",
+          "arquivo": "Instalacao-Spyder-Aula.pdf",
+          "tipo": "pdf"
+        }
+      ]
+    }
+  ]
+}

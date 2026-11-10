@@ -1,129 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Aulas e Códigos - Pressão</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-    header {
-      background-color: #28a745;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    main {
-      max-width: 1000px;
-      margin: 20px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    th, td {
-      padding: 12px;
-      border-bottom: 1px solid #ddd;
-      text-align: left;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
-    button {
-      background-color: #28a745;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #218838;
-    }
-    .voltar {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 8px 15px;
-      background-color: #ccc;
-      border-radius: 4px;
-      color: black;
-      text-decoration: none;
-    }
-    .voltar:hover {
-      background-color: #bbb;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Aulas e Códigos - Pressão</h1>
-  </header>
-
-  <main>
-    <h2>Lista de Arquivos</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Nome do Arquivo</th>
-          <th>Ação</th>
-        </tr>
-      </thead>
-      <tbody id="fileList"></tbody>
-    </table>
-
-    <a class="voltar" href="../index.html">⬅ Voltar para a disciplina</a>
-  </main>
-
-  <script>
-    // Lista de arquivos da pasta PRESSÃO
-    const arquivos = [
-      "Aula1_Pressao.pdf",
-      "Aula2_Pressao.pdf",
-      "Codigo_Pressao.py",
-      "Exemplo_Pressao.ipynb",
-      "Dados_Pressao.csv"
-    ];
-
-    const fileList = document.getElementById("fileList");
-
-    arquivos.forEach(file => {
-      const tr = document.createElement("tr");
-
-      const tdName = document.createElement("td");
-      tdName.textContent = file;
-
-      const tdAction = document.createElement("td");
-      const btn = document.createElement("button");
-      btn.textContent = "Abrir";
-      btn.onclick = () => {
-        const ext = file.split('.').pop().toLowerCase();
-
-        if (ext === "pdf" || ext === "docx") {
-          window.open(file, "_blank");
-        } 
-        else if (ext === "py" || ext === "txt" || ext === "csv") {
-          window.open(file, "_blank");
-        }
-        else if (ext === "ipynb") {
-          alert("Arquivos .ipynb devem ser abertos no Jupyter Notebook ou VSCode.");
-        }
-        else {
-          alert("Formato não suportado.");
-        }
-      };
-      tdAction.appendChild(btn);
-
-      tr.appendChild(tdName);
-      tr.appendChild(tdAction);
-      fileList.appendChild(tr);
-    });
-  </script>
-</body>
-</html>
+<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Pressão | CET990 — Engenharia UESC</title>
+<style>:root{--navy:#0b2e4e;--blue:#143e65;--border:#b8c8d8;--muted:#60748b}*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f7fa;color:#17324d;line-height:1.6}header{background:white;border-bottom:1px solid var(--border);padding:20px max(22px,calc((100% - 1100px)/2))}.brand{font-size:24px;font-weight:bold;color:var(--navy)}.sub{color:var(--muted);font-size:13px}main{max-width:1100px;margin:35px auto;padding:0 20px}.panel{background:white;border:1px solid var(--border);border-radius:16px;padding:36px}.tag{display:inline-block;background:#eaf1f7;color:var(--navy);border-radius:20px;padding:5px 13px;font-size:13px;font-weight:bold}h1{font-size:clamp(25px,3vw,32px);color:var(--navy)}p,.type{color:var(--muted)}.resource{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 0;border-bottom:1px solid var(--border)}.resource strong{overflow-wrap:anywhere}.type{font-size:12px;overflow-wrap:anywhere}.btn{display:inline-block;background:var(--blue);color:white;text-decoration:none;border-radius:7px;padding:9px 15px;font-size:14px;font-weight:bold;white-space:nowrap}.btn:hover{background:var(--navy)}.back{display:inline-block;margin-top:30px;color:var(--blue);font-weight:bold;text-decoration:none}footer{text-align:center;color:var(--muted);font-size:12px;padding:0 20px 25px}@media(max-width:650px){.panel{padding:22px}.resource{align-items:flex-start;flex-direction:column;gap:10px}}
+/* Identidade visual padronizada do Portal Engenharia UESC */
+.site-header{background:#fff!important;border-bottom:1px solid #b8c8d8!important;padding:16px 24px!important;text-align:left!important;color:#0b2e4e!important}
+.site-brand{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:14px}
+.site-brand-icon{width:52px;height:52px;flex:0 0 52px;display:flex;align-items:center;justify-content:center;background:#0b2e4e;color:#fff;border-radius:12px}
+.site-brand-text{display:flex;flex-direction:column;gap:3px;min-width:0}
+.site-brand-text strong{font-size:22px;line-height:1.25;color:#0b2e4e;font-weight:700}
+.site-brand-text small{font-size:13px;line-height:1.4;color:#60748b}
+@media(max-width:480px){.site-header{padding:14px 16px!important}.site-brand-icon{width:46px;height:46px;flex-basis:46px}.site-brand-text strong{font-size:19px}.site-brand-text small{font-size:12px}}
+</style></head>
+<body><header class="site-header"><div class="site-brand"><span class="site-brand-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2 10 10-5 10 5-10 5-10-5Z"/><path d="M6 12v5c3.5 2.8 8.5 2.8 12 0v-5"/><path d="M22 10v6"/></svg></span><span class="site-brand-text"><strong>Engenharia UESC</strong><small>Portal de Ensino e Recursos Educacionais</small></span></div></header><main><section class="panel"><span class="tag">CET990 · Aulas · Pressão</span><h1>Aulas de Pressão</h1><p>Consulte os materiais didáticos e computacionais disponíveis nesta área.</p><div class="resource"><div><strong>Apostila de Instrumentação Computacional</strong><div class="type">APOSTILA-INSTRUMENTACAO-COMPUTACIONAL.pdf</div></div><a class="btn" href="APOSTILA-INSTRUMENTACAO-COMPUTACIONAL.pdf" target="_blank" rel="noopener noreferrer">Abrir PDF</a></div>
+<div class="resource"><div><strong>Laboratório 03 — Exercício 02</strong><div class="type">LABORATORIO-03-EXERCICIO-02-VERSAO-PRATICA.pdf</div></div><a class="btn" href="LABORATORIO-03-EXERCICIO-02-VERSAO-PRATICA.pdf" target="_blank" rel="noopener noreferrer">Abrir PDF</a></div>
+<div class="resource"><div><strong>Monitoramento de pressão em reator químico</strong><div class="type">monitoramento-pressao-reator-quimico.ipynb</div></div><a class="btn" href="https://github.com/Edwards1969/portal-engenharia-uesc/blob/main/CET990/AULAS/PRESSAO/monitoramento-pressao-reator-quimico.ipynb" target="_blank" rel="noopener noreferrer">Ver notebook</a></div><a class="back" href="../index.html">← Voltar</a></section></main><footer>Engenharia UESC — Portal de Ensino e Recursos Educacionais</footer></body></html>

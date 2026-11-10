@@ -1,0 +1,118 @@
+{
+  "versao": 1,
+  "disciplina": "CET1012",
+  "categoria": "AULAS",
+  "assuntos": [
+    {
+      "id": "GERAL",
+      "nome": "Introdução",
+      "materiais": [
+        {
+          "titulo": "Aula Instalacao Anaconda Spyder",
+          "arquivo": "Aula-Instalacao-Anaconda-Spyder.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "titulo": "Aula 0 CET1012 Matriz",
+          "arquivo": "Aula_0_CET1012_Matriz.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 10 CET1012 Balanço em  reator químico",
+          "arquivo": "Aula_10_CET1012_Balanço em  reator químico.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 11 CET1012 Modelagem reator químico",
+          "arquivo": "Aula_11_CET1012_Modelagem reator químico.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 13 CET1012 Metodo Matrizes Thomas",
+          "arquivo": "Aula_13_CET1012_Metodo_Matrizes_Thomas.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 14 CET1012 Producao amonia com reciclo",
+          "arquivo": "Aula_14_CET1012_Producao_amonia_com_reciclo.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 15 Destilacao multiplos componentes",
+          "arquivo": "Aula_15_Destilacao_multiplos_componentes.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 16 CET1012 Processo Separacao Modular",
+          "arquivo": "Aula_16_CET1012_Processo-Separacao-Modular.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 17 CET1012 Modelagem Matricial Destilação Petroleo",
+          "arquivo": "Aula_17_CET1012_Modelagem_Matricial_Destilação_Petroleo.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 18 CET1012 Separacao componentes petroleo",
+          "arquivo": "Aula_18_CET1012_Separacao_componentes_petroleo.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 19 CET1012 Sistema Esparso",
+          "arquivo": "Aula_19_CET1012_Sistema_Esparso.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 1 CET1012 Matrizes introdução",
+          "arquivo": "Aula_1_CET1012_Matrizes_introdução.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 20 CET1012 Exercicio Sistema Esparso",
+          "arquivo": "Aula_20_CET1012_Exercicio_Sistema_Esparso.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 2 CET1012 Matrizes",
+          "arquivo": "Aula_2_CET1012_Matrizes.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 3 CET1012 Matrizes 2025",
+          "arquivo": "Aula_3_CET1012_Matrizes_2025.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 4 CET1012 Matrizes",
+          "arquivo": "Aula_4_CET1012_Matrizes.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 5 CET1012 Regra Cramer",
+          "arquivo": "Aula_5_CET1012_Regra_Cramer.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 6 CET1012 Regra Cramer Indústria Química",
+          "arquivo": "Aula_6_CET1012_Regra_Cramer_Indústria_Química.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 7 CET1012 Temperatura em Placa",
+          "arquivo": "Aula_7_CET1012_Temperatura em Placa.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 8 CET012 Matriz 5x5",
+          "arquivo": "Aula_8_CET012_Matriz_5x5.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 9 CET1012 Determinação matriz mn",
+          "arquivo": "Aula_9_CET1012_Determinação_matriz_mn.ipynb",
+          "tipo": "ipynb"
+        }
+      ]
+    }
+  ]
+}

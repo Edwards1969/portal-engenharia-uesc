@@ -1,0 +1,23 @@
+{
+  "versao": 1,
+  "disciplina": "CET1012",
+  "categoria": "EXERCICIOS",
+  "assuntos": [
+    {
+      "id": "GERAL",
+      "nome": "Geral",
+      "materiais": [
+        {
+          "titulo": "Lista 1 Calculos matriciais Engenharia Quimica",
+          "arquivo": "Lista_1_Calculos_matriciais_Engenharia_Quimica.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Projeto P4 CET1012 2025 2",
+          "arquivo": "Projeto_P4_CET1012_2025_2.pdf",
+          "tipo": "pdf"
+        }
+      ]
+    }
+  ]
+}

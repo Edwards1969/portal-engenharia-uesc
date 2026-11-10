@@ -1,0 +1,58 @@
+{
+  "versao": 1,
+  "disciplina": "CET1006",
+  "categoria": "AULAS",
+  "assuntos": [
+    {
+      "id": "GERAL",
+      "nome": "Introdução",
+      "materiais": [
+        {
+          "titulo": "APOSTILA CONTROLE PROCESSOS",
+          "arquivo": "APOSTILA-CONTROLE-PROCESSOS.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "titulo": "Aula CET1006 Controle PID forno",
+          "arquivo": "Aula-CET1006-Controle-PID-forno.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula Instalacao Anaconda Spyder",
+          "arquivo": "Aula-Instalacao-Anaconda-Spyder.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "titulo": "Aula 01 CET1006 Transformada Laplace",
+          "arquivo": "Aula_01_CET1006_Transformada_Laplace.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 02 Sistema modelado Equações Diferenciais",
+          "arquivo": "Aula_02_Sistema_modelado_Equações_Diferenciais.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "CET1006 Avaliacao 2 2025 2",
+          "arquivo": "CET1006_Avaliacao_2_2025_2.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Gabarito Laboratorio 03 Turma A",
+          "arquivo": "Gabarito-Laboratorio-03-Turma-A.py",
+          "tipo": "py"
+        },
+        {
+          "titulo": "Gabarito Laboratorio 03 Turma B",
+          "arquivo": "Gabarito-Laboratorio-03-Turma-B.py",
+          "tipo": "py"
+        },
+        {
+          "titulo": "LABORATORIO 03 CET1006",
+          "arquivo": "LABORATORIO-03-CET1006.pdf",
+          "tipo": "pdf"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "versao": 1,
+  "disciplina": "CET1011",
+  "categoria": "AULAS",
+  "assuntos": [
+    {
+      "id": "GERAL",
+      "nome": "Introdução",
+      "materiais": [
+        {
+          "titulo": "Aula Instalacao Anaconda Spyder",
+          "arquivo": "Aula-Instalacao-Anaconda-Spyder.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "titulo": "Aula 1 CAE",
+          "arquivo": "Aula_1_CAE.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "titulo": "Aula 2 CAE",
+          "arquivo": "Aula_2_CAE.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "titulo": "CET1011 Cálculo do volume hidrociclone",
+          "arquivo": "CET1011_Cálculo_do_volume_hidrociclone.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "CET1011 dimensionamento vazo pressao",
+          "arquivo": "CET1011_dimensionamento_vazo_pressao.py",
+          "tipo": "py"
+        },
+        {
+          "titulo": "CET1011 Principio de cavalieri volume cubo",
+          "arquivo": "CET1011_Principio_de_cavalieri_volume_cubo.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "CET1011 Projeto tanque eliptico SolidWorks",
+          "arquivo": "CET1011_Projeto_tanque_eliptico_SolidWorks.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "CET1011 Prova P3 gabarito matemático",
+          "arquivo": "CET1011_Prova_P3_gabarito_matemático.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "dimensionamento vaso pressao asme",
+          "arquivo": "dimensionamento_vaso_pressao_asme.py",
+          "tipo": "py"
+        },
+        {
+          "titulo": "Dimensionamento Vasos Pressao CET1011",
+          "arquivo": "Dimensionamento_Vasos_Pressao_CET1011.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Projeto CET1011 P2 2026 1",
+          "arquivo": "Projeto_CET1011_P2-2026-1.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "titulo": "Projeto P1 solidworks 2025 2",
+          "arquivo": "Projeto_P1_solidworks_2025_2.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "titulo": "Projeto P3 solidworks 2025 2",
+          "arquivo": "Projeto_P3_solidworks_2025_2.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "titulo": "Projeto P4 solidworks 2025 2",
+          "arquivo": "Projeto_P4_solidworks_2025_2.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "titulo": "Prova CET1011 P1 2025 2",
+          "arquivo": "Prova_CET1011_P1_2025_2.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "titulo": "Prova CET1011 P2 2025 2",
+          "arquivo": "Prova_CET1011_P2_2025_2.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "titulo": "Prova CET1011 P3 2025 2",
+          "arquivo": "Prova_CET1011_P3_2025_2.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "titulo": "Prova CET1011 P3 2026 1 solidworks",
+          "arquivo": "Prova_CET1011_P3_2026-1_solidworks.pdf",
+          "tipo": "pdf"
+        },
+        {
+          "titulo": "resolucao dimensao vaso treino",
+          "arquivo": "resolucao-dimensao-vaso-treino.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "teste",
+          "arquivo": "teste.py",
+          "tipo": "py"
+        }
+      ]
+    }
+  ]
+}

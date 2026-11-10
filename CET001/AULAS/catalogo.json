@@ -1,0 +1,53 @@
+{
+  "versao": 1,
+  "disciplina": "CET001",
+  "categoria": "AULAS",
+  "assuntos": [
+    {
+      "id": "GERAL",
+      "nome": "Introdução",
+      "materiais": [
+        {
+          "titulo": "Aula 1 1 Python Engenharia treinamento",
+          "arquivo": "Aula_1_1_Python_Engenharia_treinamento.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 1 2 Python Engenharia treinamento",
+          "arquivo": "Aula_1_2_Python_Engenharia_treinamento.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 1 3 Python Engenharia treinamento",
+          "arquivo": "Aula_1_3_Python_Engenharia_treinamento.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 3 1 Python Engenharia Civil",
+          "arquivo": "Aula_3-1_Python_Engenharia_Civil.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 3 2 1 Python Engenharia Eletrica",
+          "arquivo": "Aula_3-2-1_Python_Engenharia_Eletrica.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 3 2 2 Python Engenharia Eletrica",
+          "arquivo": "Aula_3-2-2_Python_Engenharia_Eletrica.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 3 3 Python Engenharia Mecanica",
+          "arquivo": "Aula_3-3_Python_Engenharia_Mecanica.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 4 1 Python Engenharia Quimica",
+          "arquivo": "Aula_4-1_Python_Engenharia_Quimica.ipynb",
+          "tipo": "ipynb"
+        }
+      ]
+    }
+  ]
+}
