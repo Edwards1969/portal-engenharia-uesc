@@ -1,103 +1,180 @@
-Atualização GuitHub
+........................................
+RESUMO SIMPLIFICADO — ATUALIZAÇÃO DO GITHUB
+........................................
 
-Passos para atualizar o GitHub após modificações locais
+1. Verificar a branch atual:
 
-1.Verificar o status do repositório
+git branch --show-current
+
+2. Verificar os arquivos modificados:
+
+git status
+
+3. Adicionar as alterações:
+
+git add .
+
+4. Conferir os arquivos preparados:
+
+git diff --cached --name-status
+
+5. Registrar as alterações:
+
+git commit -m "Atualização dos materiais do Portal Engenharia UESC"
+
+6. Enviar para o GitHub:
+
+git push origin main
+
+7. Confirmar a atualização:
+
+git status
+
+........................................
+IMPORTANTE:
+........................................
+
+- Confirmar que a branch atual é main.
+- Evitar incluir arquivos temporários, como .ipynb_checkpoints.
+- Utilizar mensagens descritivas nos commits.
+- Se houver alterações em outra branch, não
+  executar git push origin main automaticamente.
+- Se utilizar o GitHub Desktop, não é necessário
+  executar esses mesmos comandos no terminal.
+........................................
+ATUALIZAÇÃO DO GITHUB
+
+Procedimento para atualizar o repositório após modificações locais.
+
+==================================================
+1. VERIFICAR A BRANCH ATUAL
+==================================================
+
+git branch --show-current
+
+Mostra a branch em que estamos trabalhando.
+
+Para publicar diretamente na branch principal, o resultado deve ser:
+
+main
+
+Se aparecer outra branch, verificar antes de continuar.
+
+
+==================================================
+2. VERIFICAR O STATUS DO REPOSITÓRIO
+==================================================
 
 git status
 
 Mostra quais arquivos foram modificados, adicionados ou removidos.
-................................................
 
-2.Adicionar os arquivos modificados/novos para o próximo commit
+Verificar se existem arquivos temporários que não devem ser publicados.
 
--> Para adicionar todos os arquivos (modificados e novos):
+
+==================================================
+3. ADICIONAR OS ARQUIVOS AO PRÓXIMO COMMIT
+==================================================
 
 git add .
 
-..............................................
-3. Criar um commit com uma mensagem que explique a alteração
+Adiciona arquivos novos, modificados e excluídos do diretório atual e suas subpastas.
 
-git commit -m "Mensagem clara e objetiva sobre o que foi modificado/adicionado"
-git commit -m "09112026"
-.................................................
-4. Enviar (push) as alterações para o repositório remoto no GitHub
+Para conferir quais alterações foram preparadas:
+
+git diff --cached --name-status
+
+ATENÇÃO: Evitar incluir arquivos temporários, como .ipynb_checkpoints, ou configurações locais desnecessárias.
+
+
+==================================================
+4. CRIAR UM COMMIT
+==================================================
+
+git commit -m "Correção dos caminhos das imagens nos notebooks Python"
+
+Outros exemplos:
+
+git commit -m "Atualização dos materiais didáticos da CET001"
+
+git commit -m "Reorganização das páginas HTML do Portal Engenharia UESC"
+
+Utilizar mensagens que descrevam as alterações. O Git registra automaticamente a data e o horário.
+
+
+==================================================
+5. ENVIAR AS ALTERAÇÕES AO GITHUB
+==================================================
 
 git push origin main
 
--> Supondo que sua branch principal seja main. Se for outra, substitua.
+Envia os commits locais para a branch main do repositório remoto.
 
-........................................
-Resumo simplificado:
+ATENÇÃO: Confirmar que estamos trabalhando na branch main antes de executar esse comando.
+
+
+==================================================
+6. CONFIRMAR A ATUALIZAÇÃO
+==================================================
 
 git status
 
-git add .
+Quando não houver alterações pendentes e a branch estiver sincronizada, o Git poderá apresentar:
 
-git commit -m "Alteração em 07112026"
+On branch main
+Your branch is up to date with 'origin/main'.
 
-git push origin main
+nothing to commit, working tree clean
 
-.......................
-git commit -m "Atualização de Aula999 - Apostila", exercício separadores 
-git add . → Colocar todos os arquivos novos e modificados no stage.
-
-git commit -m "..." → Gravar a alteração no repositório local.
-+
-git push origin main → Enviar para o GitHub.
-
-.................................
-#  (não apaga do computador)Remove o arquivo do índice do Git
-git rm --cached CET000/Aula_1-1_Redes_Neurais_Apresentacao.ipynb
-
-# Adiciona a mudança
-git add .gitignore
-
-# Faz commit
-git commit -m "Ignorar notebook de aulas privadas"
-
-# Envia para o GitHub
-git push
-
-.................................
-Se você ainda não configurou o repositório remoto, faça isso uma vez só (substitua pela URL correta do seu repositório):
-
-git remote add origin https://github.com/Edwards1969/site-aulas-uesc.git
+Também é recomendável verificar os arquivos diretamente no GitHub.
 
 
+==================================================
+PROCEDIMENTO ALTERNATIVO — GITHUB DESKTOP
+==================================================
+
+1. Abrir o GitHub Desktop.
+
+2. Confirmar:
+   Current repository: portal-engenharia-uesc
+   Current branch: main
+
+3. Na aba Changes, verificar os arquivos modificados, adicionados ou excluídos.
+
+4. Selecionar somente os arquivos que devem entrar no commit.
+
+5. No campo Summary (required), escrever uma mensagem, por exemplo:
+
+   Correção dos caminhos das imagens nos notebooks Python
+
+6. Clicar em Commit to main.
+
+7. Clicar em Push origin.
+
+8. Aguardar o botão superior voltar a mostrar Fetch origin.
+
+9. Verificar se aparece 0 changed files.
+
+10. Conferir no GitHub se os arquivos foram publicados corretamente.
 
 
+==================================================
+OBSERVAÇÕES IMPORTANTES
+==================================================
 
+git add .  -> Prepara as alterações para o commit.
 
+git commit -> Registra as alterações no histórico local.
 
+git push   -> Envia os commits para o GitHub.
 
+A branch main deve conter a versão principal do projeto.
 
+Alterações maiores podem ser desenvolvidas em uma branch separada e depois incorporadas à main.
 
+Evitar publicar arquivos temporários, especialmente os diretórios .ipynb_checkpoints.
 
+Não é necessário utilizar o terminal quando as operações já foram realizadas pelo GitHub Desktop.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-link para criar os códigos para a página de aulas.
-
-https://chatgpt.com/share/6894e3cb-7a1c-800f-9e7a-f7d4c84e15ee
-
-https://chatgpt.com/share/6894e3cb-7a1c-800f-9e7a-f7d4c84e15ee
-
-https://chatgpt.com/c/68965932-7eec-832d-8c63-9be690448b46
-
-https://chatgpt.com/share/6897aced-b224-800f-9e5b-1db4011d34c1
+Para o Portal Engenharia UESC, recomenda-se utilizar o GitHub Desktop nas atualizações rotineiras e manter estes comandos como referência.
 
