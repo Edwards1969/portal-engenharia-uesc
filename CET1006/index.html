@@ -1,125 +1,263 @@
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Disciplina CET1006 - Acesso</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>CET1006 — Controle de Processos Aplicado | Engenharia UESC</title>
+
   <style>
+    :root {
+      --azul: #0b2e4e;
+      --botao: #143e65;
+      --borda: #b8c8d8;
+      --fundo: #f4f7fa;
+      --secundario: #60748b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      margin: 30px;
-      background-color: #f4f4f4;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--fundo);
+      color: #17324d;
+      line-height: 1.6;
+    }
+
+    .site-header {
+      background: white;
+      border-bottom: 1px solid var(--borda);
+      padding: 16px 24px;
+    }
+
+    .site-brand {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .site-brand-icon {
+      width: 52px;
+      height: 52px;
+      flex: 0 0 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--azul);
+      color: white;
+      border-radius: 12px;
+    }
+
+    .site-brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .site-brand-text strong {
+      font-size: 22px;
+      color: var(--azul);
+    }
+
+    .site-brand-text small {
+      font-size: 13px;
+      color: var(--secundario);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 38px auto;
+      padding: 0 20px;
+    }
+
+    .painel {
+      background: white;
+      border: 1px solid var(--borda);
+      border-radius: 16px;
+      padding: 36px;
+    }
+
+    .codigo {
+      display: inline-block;
+      background: #eaf1f7;
+      color: var(--azul);
+      font-size: 13px;
+      font-weight: bold;
+      border-radius: 20px;
+      padding: 6px 14px;
     }
 
     h1 {
-      text-align: center;
+      color: var(--azul);
+      font-size: clamp(26px, 3vw, 34px);
+      line-height: 1.25;
+      margin-top: 24px;
     }
 
-    form {
-      max-width: 400px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    p {
+      color: var(--secundario);
     }
 
-    input[type="text"],
-    input[type="email"],
-    input[type="password"] {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+    .grade {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 30px;
     }
 
-    input[type="submit"] {
-      width: 100%;
-      padding: 10px;
-      background-color: #0074B7;
+    .cartao {
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border: 1px solid var(--borda);
+      border-radius: 12px;
+      padding: 24px;
+      text-decoration: none;
+      color: #17324d;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .cartao:hover {
+      border-color: var(--botao);
+      box-shadow: 0 4px 14px rgba(11, 46, 78, 0.1);
+    }
+
+    .cartao h2 {
+      color: var(--azul);
+      font-size: 21px;
+      margin: 0 0 10px;
+    }
+
+    .cartao p {
+      margin: 0 0 22px;
+      flex-grow: 1;
+    }
+
+    .botao {
+      display: inline-block;
+      align-self: flex-start;
+      background: var(--botao);
       color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
+      font-weight: bold;
+      font-size: 14px;
+      border-radius: 7px;
+      padding: 10px 16px;
     }
 
-    .link-voltar {
+    .voltar {
+      display: inline-block;
+      margin-top: 30px;
+      color: var(--botao);
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer {
       text-align: center;
-      margin-top: 20px;
+      padding: 20px;
+      font-size: 12px;
+      color: var(--secundario);
+    }
+
+    @media (max-width: 700px) {
+      main {
+        margin: 16px auto;
+        padding: 0 12px;
+      }
+
+      .painel {
+        padding: 22px 18px;
+      }
+
+      .grade {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
 
-  <h1>Disciplina CET1006 - Cadastro / Login</h1>
+  <header class="site-header">
+    <div class="site-brand">
+      <span class="site-brand-icon" aria-hidden="true">🎓</span>
 
-  <!-- Formulário de Cadastro -->
-  <form id="formCadastro">
-    <h2>Cadastro de Aluno</h2>
-    <input type="text" id="nome" placeholder="Nome completo" required>
-    <input type="email" id="email" placeholder="E-mail institucional" required>
-    <input type="text" id="matricula" placeholder="Número de matrícula (senha)" required>
-    <input type="submit" value="Cadastrar">
-  </form>
+      <span class="site-brand-text">
+        <strong>Engenharia UESC</strong>
+        <small>Portal de Ensino e Recursos Educacionais</small>
+      </span>
+    </div>
+  </header>
 
-  <!-- Formulário de Login -->
-  <form id="formLogin">
-    <h2>Login</h2>
-    <input type="email" id="emailLogin" placeholder="E-mail institucional" required>
-    <input type="password" id="senhaLogin" placeholder="Número de matrícula" required>
-    <input type="submit" value="Entrar na disciplina">
-  </form>
+  <main>
+    <section class="painel">
 
-  <div class="link-voltar">
-    <a href="../../index.html">Voltar à página inicial</a>
-  </div>
+      <span class="codigo">CET1006 · Disciplina</span>
 
-  <script>
-    // Armazenamento no localStorage
-    const formCadastro = document.getElementById('formCadastro');
-    const formLogin = document.getElementById('formLogin');
+      <h1>Controle de Processos Aplicado</h1>
 
-    formCadastro.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const nome = document.getElementById('nome').value;
-      const email = document.getElementById('email').value;
-      const matricula = document.getElementById('matricula').value;
+      <p>
+        Acesse os materiais didáticos da disciplina,
+        incluindo aulas, apostilas, exercícios,
+        atividades de laboratório, apresentações
+        e recursos audiovisuais.
+      </p>
 
-      const usuario = {
-        nome: nome,
-        email: email,
-        senha: matricula
-      };
+      <div class="grade">
 
-      let usuarios = JSON.parse(localStorage.getItem('CET1011_usuarios')) || [];
+        <a class="cartao" href="./AULAS/index.html">
+          <h2>Aulas</h2>
+          <p>
+            Apostilas, notebooks Jupyter,
+            códigos Python e materiais de apoio.
+          </p>
+          <span class="botao">Acessar Aulas</span>
+        </a>
 
-      const existe = usuarios.some(u => u.email === email);
-      if (existe) {
-        alert('Este e-mail já está cadastrado!');
-        return;
-      }
+        <a class="cartao" href="./EXERCICIOS/index.html">
+          <h2>Exercícios</h2>
+          <p>
+            Listas de exercícios, projetos,
+            atividades de laboratório e avaliações.
+          </p>
+          <span class="botao">Acessar Exercícios</span>
+        </a>
 
-      usuarios.push(usuario);
-      localStorage.setItem('CET1011_usuarios', JSON.stringify(usuarios));
-      alert('Cadastro realizado com sucesso!');
-      formCadastro.reset();
-    });
+        <a class="cartao" href="./SLIDES/index.html">
+          <h2>Slides</h2>
+          <p>
+            Apresentações e materiais visuais
+            utilizados nas aulas.
+          </p>
+          <span class="botao">Acessar Slides</span>
+        </a>
 
-    formLogin.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const email = document.getElementById('emailLogin').value;
-      const senha = document.getElementById('senhaLogin').value;
+        <a class="cartao" href="./VIDEOS/index.html">
+          <h2>Vídeos</h2>
+          <p>
+            Vídeos demonstrativos e materiais
+            audiovisuais de apoio à aprendizagem.
+          </p>
+          <span class="botao">Acessar Vídeos</span>
+        </a>
 
-      let usuarios = JSON.parse(localStorage.getItem('CET1011_usuarios')) || [];
+      </div>
 
-      const usuario = usuarios.find(u => u.email === email && u.senha === senha);
-      if (usuario) {
-        alert('Login bem-sucedido. Bem-vindo(a), ' + usuario.nome + '!');
-        window.location.href = "./aulas/index.html"; // redireciona para aulas
-      } else {
-        alert('E-mail ou matrícula incorretos.');
-      }
-    });
-  </script>
+      <a class="voltar" href="../index.html">
+        ← Voltar ao Portal Engenharia UESC
+      </a>
+
+    </section>
+  </main>
+
+  <footer>
+    Engenharia UESC — Portal de Ensino e Recursos Educacionais
+  </footer>
+
 </body>
 </html>

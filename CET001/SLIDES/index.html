@@ -1,128 +1,333 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Slides - CET1011</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>CET001 — Vídeos | Engenharia UESC</title>
+
   <style>
+    :root {
+      --azul: #0b2e4e;
+      --botao: #143e65;
+      --borda: #b8c8d8;
+      --fundo: #f4f7fa;
+      --secundario: #60748b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--fundo);
+      color: #17324d;
+      line-height: 1.6;
     }
-    header {
-      background-color: #3f51b5;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    main {
-      max-width: 1000px;
-      margin: 20px auto;
-      padding: 20px;
+
+    .site-header {
       background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-bottom: 1px solid var(--borda);
+      padding: 16px 24px;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
+
+    .site-brand {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 14px;
     }
-    th, td {
-      padding: 12px;
-      border-bottom: 1px solid #ddd;
-      text-align: left;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
-    button {
-      background-color: #3f51b5;
+
+    .site-brand-icon {
+      width: 52px;
+      height: 52px;
+      flex: 0 0 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--azul);
       color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 4px;
-      cursor: pointer;
+      border-radius: 12px;
     }
-    button:hover {
-      background-color: #2c3e99;
+
+    .site-brand-text {
+      display: flex;
+      flex-direction: column;
     }
+
+    .site-brand-text strong {
+      font-size: 22px;
+      color: var(--azul);
+    }
+
+    .site-brand-text small {
+      font-size: 13px;
+      color: var(--secundario);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 38px auto;
+      padding: 0 20px;
+    }
+
+    .painel {
+      background: white;
+      border: 1px solid var(--borda);
+      border-radius: 16px;
+      padding: 36px;
+    }
+
+    .codigo {
+      display: inline-block;
+      background: #eaf1f7;
+      color: var(--azul);
+      font-size: 13px;
+      font-weight: bold;
+      border-radius: 20px;
+      padding: 6px 14px;
+    }
+
+    h1 {
+      color: var(--azul);
+      font-size: clamp(26px, 3vw, 34px);
+      line-height: 1.25;
+    }
+
+    h2 {
+      color: var(--azul);
+      font-size: 21px;
+    }
+
+    p {
+      color: var(--secundario);
+    }
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--borda);
+    }
+
+    .item strong {
+      display: block;
+      overflow-wrap: anywhere;
+    }
+
+    .tipo {
+      display: block;
+      font-size: 12px;
+      color: var(--secundario);
+      overflow-wrap: anywhere;
+    }
+
+    .botao {
+      display: inline-block;
+      background: var(--botao);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+      border-radius: 7px;
+      padding: 10px 16px;
+      flex-shrink: 0;
+    }
+
+    .botao:hover {
+      background: #245984;
+    }
+
     .voltar {
       display: inline-block;
-      margin-top: 20px;
-      padding: 8px 15px;
-      background-color: #ccc;
-      border-radius: 4px;
-      color: black;
+      margin-top: 30px;
+      color: var(--botao);
+      font-weight: bold;
       text-decoration: none;
     }
-    .voltar:hover {
-      background-color: #bbb;
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 12px;
+      color: var(--secundario);
+    }
+
+    @media (max-width: 700px) {
+      main {
+        margin: 16px auto;
+        padding: 0 12px;
+      }
+
+      .painel {
+        padding: 22px 18px;
+      }
+
+      .item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .botao {
+        min-height: 44px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>Slides - CET1011</h1>
+
+  <header class="site-header">
+    <div class="site-brand">
+      <span class="site-brand-icon" aria-hidden="true">🎓</span>
+
+      <span class="site-brand-text">
+        <strong>Engenharia UESC</strong>
+        <small>Portal de Ensino e Recursos Educacionais</small>
+      </span>
+    </div>
   </header>
 
   <main>
-    <h2>Lista de Slides</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Nome do Arquivo</th>
-          <th>Ação</th>
-        </tr>
-      </thead>
-      <tbody id="fileList"></tbody>
-    </table>
+    <section class="painel">
 
-    <a class="voltar" href="../index.html">⬅ Voltar para a disciplina</a>
+      <span class="codigo">CET001 · Slides</span>
+
+      <h1>Python Aplicado às Engenharias</h1>
+
+      <p>
+        Consulte apresentações e materiais visuais complementares sobre programação em Python e suas aplicações nas diferentes áreas da Engenharia. Os arquivos disponíveis são apresentadosautomaticamente a partir do catálogo.
+      </p>
+
+      <h2>Materiais disponíveis</h2>
+
+      <div id="materiais">
+        <p>Carregando materiais...</p>
+      </div>
+
+      <a class="voltar" href="../index.html">
+        ← Voltar aos Recursos Educacionais Complementares — CET001
+      </a>
+
+    </section>
   </main>
 
+  <footer>
+    Engenharia UESC — Portal de Ensino e Recursos Educacionais
+  </footer>
+
   <script>
-    // Lista de slides disponíveis
-    const arquivos = [
-      "Slide_01_CET000.pdf",
-      "Slide_02_CET000.pdf",
-      "Slide_03_CET000.pdf",
-      "Slide_04_CET000.pdf",
-      "Slide_05_CET000.pdf",
-      "Slide_05_CET000.pdf",
-      "Slide_07_CET000.pdf",
-      "Slide_08_CET000.pdf",
-      "Slide_09_CET000.pdf",
-      "Slide_10_CET000.pdf"
-    ];
+    async function carregarMateriais() {
+      const container = document.getElementById("materiais");
 
-    const fileList = document.getElementById("fileList");
+      try {
+        const response = await fetch("./catalogo.json", {
+          cache: "no-store"
+        });
 
-    arquivos.forEach(file => {
-      const tr = document.createElement("tr");
-
-      const tdName = document.createElement("td");
-      tdName.textContent = file;
-
-      const tdAction = document.createElement("td");
-      const btn = document.createElement("button");
-      btn.textContent = "Abrir";
-      btn.onclick = () => {
-        const ext = file.split('.').pop().toLowerCase();
-        if (ext === "pdf") {
-          window.open(file, "_blank");
-        } else {
-          alert("Formato não suportado. Apenas PDF.");
+        if (!response.ok) {
+          throw new Error("Catálogo não encontrado");
         }
-      };
-      tdAction.appendChild(btn);
 
-      tr.appendChild(tdName);
-      tr.appendChild(tdAction);
-      fileList.appendChild(tr);
-    });
+        const data = await response.json();
+        const materiais = [];
+
+        if (Array.isArray(data.assuntos)) {
+          data.assuntos.forEach(assunto => {
+            if (Array.isArray(assunto.materiais)) {
+              materiais.push(...assunto.materiais);
+            }
+          });
+        }
+
+        container.replaceChildren();
+
+        if (materiais.length === 0) {
+          container.textContent =
+            "Nenhum material disponível no catálogo.";
+          return;
+        }
+
+        const githubBase =
+          "https://github.com/Edwards1969/" +
+          "portal-engenharia-uesc/blob/main/" +
+          encodeURIComponent(data.disciplina) + "/" +
+          encodeURIComponent(data.categoria) + "/";
+
+        const codificarCaminho = caminho =>
+          caminho.split("/").map(encodeURIComponent).join("/");
+
+        materiais.forEach(material => {
+          const arquivo = material.arquivo;
+
+          if (typeof arquivo !== "string" || !arquivo) {
+            return;
+          }
+
+          const titulo = material.titulo || arquivo;
+          const extensao = arquivo.split(".").pop().toLowerCase();
+
+          let url;
+          let textoBotao;
+
+          if (extensao === "pdf") {
+            url = codificarCaminho(arquivo);
+            textoBotao = "Abrir PDF";
+          } else if (extensao === "ipynb") {
+            url = githubBase + codificarCaminho(arquivo);
+            textoBotao = "Abrir Notebook";
+          } else if (extensao === "py") {
+            url = githubBase + codificarCaminho(arquivo);
+            textoBotao = "Ver código";
+          } else {
+            url = codificarCaminho(arquivo);
+            textoBotao = "Abrir arquivo";
+          }
+
+          const item = document.createElement("div");
+          item.className = "item";
+
+          const informacoes = document.createElement("div");
+
+          const nome = document.createElement("strong");
+          nome.textContent = titulo;
+
+          const tipo = document.createElement("span");
+          tipo.className = "tipo";
+          tipo.textContent =
+            extensao.toUpperCase() + " · " + arquivo;
+
+          informacoes.append(nome, tipo);
+
+          const botao = document.createElement("a");
+          botao.className = "botao";
+          botao.href = url;
+          botao.target = "_blank";
+          botao.rel = "noopener noreferrer";
+          botao.textContent = textoBotao;
+
+          item.append(informacoes, botao);
+          container.appendChild(item);
+        });
+
+      } catch (erro) {
+        container.textContent =
+          "Não foi possível carregar o catálogo de materiais.";
+
+        console.error(erro);
+      }
+    }
+
+    carregarMateriais();
   </script>
+
 </body>
 </html>
-
-
+S

@@ -3,4 +3,109 @@
 <style>:root{--navy:#0b2e4e;--blue:#143e65;--border:#b8c8d8;--muted:#60748b}*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f7fa;color:#17324d;line-height:1.6}header{background:white;border-bottom:1px solid var(--border);padding:20px max(22px,calc((100% - 1100px)/2))}.brand{font-size:24px;font-weight:bold;color:var(--navy)}.sub{color:var(--muted);font-size:13px}main{max-width:1100px;margin:35px auto;padding:0 20px}.panel{background:white;border:1px solid var(--border);border-radius:16px;padding:36px}.tag{display:inline-block;background:#eaf1f7;color:var(--navy);border-radius:20px;padding:5px 13px;font-size:13px;font-weight:bold}h1{font-size:clamp(25px,3vw,32px);color:var(--navy)}p,.type{color:var(--muted)}.resource{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 0;border-bottom:1px solid var(--border)}.resource strong{overflow-wrap:anywhere}.type{font-size:12px;overflow-wrap:anywhere}.btn{display:inline-block;background:var(--blue);color:white;text-decoration:none;border-radius:7px;padding:9px 15px;font-size:14px;font-weight:bold;white-space:nowrap}.btn:hover{background:var(--navy)}.back{display:inline-block;margin-top:30px;color:var(--blue);font-weight:bold;text-decoration:none}footer{text-align:center;color:var(--muted);font-size:12px;padding:0 20px 25px}@media(max-width:650px){.panel{padding:22px}.resource{align-items:flex-start;flex-direction:column;gap:10px}}
 .site-header{background:#fff!important;border-bottom:1px solid #b8c8d8!important;padding:16px 24px!important;text-align:left!important;color:#0b2e4e!important}.site-brand{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:14px}.site-brand-icon{width:52px;height:52px;flex:0 0 52px;display:flex;align-items:center;justify-content:center;background:#0b2e4e;color:#fff;border-radius:12px}.site-brand-text{display:flex;flex-direction:column;gap:3px;min-width:0}.site-brand-text strong{font-size:22px;line-height:1.25;color:#0b2e4e;font-weight:700}.site-brand-text small{font-size:13px;line-height:1.4;color:#60748b}@media(max-width:480px){.site-header{padding:14px 16px!important}.site-brand-icon{width:46px;height:46px;flex-basis:46px}.site-brand-text strong{font-size:19px}.site-brand-text small{font-size:12px}}
 </style></head>
-<body><header class="site-header"><div class="site-brand"><span class="site-brand-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2 10 10-5 10 5-10 5-10-5Z"/><path d="M6 12v5c3.5 2.8 8.5 2.8 12 0v-5"/><path d="M22 10v6"/></svg></span><span class="site-brand-text"><strong>Engenharia UESC</strong><small>Portal de Ensino e Recursos Educacionais</small></span></div></header><main><section class="panel"><span class="tag">CET990 · Vídeos</span><h1>Vídeos</h1><p>Os materiais desta seção serão publicados quando estiverem disponíveis.</p><a class="back" href="../index.html">← Voltar</a></section></main><footer>Engenharia UESC — Portal de Ensino e Recursos Educacionais</footer></body></html>
+<body><header class="site-header"><div class="site-brand"><span class="site-brand-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m2 10 10-5 10 5-10 5-10-5Z"/><path d="M6 12v5c3.5 2.8 8.5 2.8 12 0v-5"/><path d="M22 10v6"/></svg></span><span class="site-brand-text"><strong>Engenharia UESC</strong><small>Portal de Ensino e Recursos Educacionais</small></span></div></header><main><section class="panel"><span class="tag">CET990 · Vídeos</span>
+<h1>Vídeos — Instrumentação e Controle de Qualidade</h1>
+
+<p>
+  Consulte os materiais audiovisuais da disciplina.
+  Os vídeos disponíveis serão apresentados nesta página.
+</p>
+
+<h2>Materiais disponíveis</h2>
+
+<div id="materiais">
+  <p>Carregando materiais...</p>
+</div>
+
+<a class="back" href="../index.html">← Voltar</a>
+
+</section>
+</main>
+
+<footer>
+  Engenharia UESC — Portal de Ensino e Recursos Educacionais
+</footer>
+
+<script>
+async function carregarMateriais() {
+  const container = document.getElementById("materiais");
+
+  try {
+    const response = await fetch("./catalogo.json", {
+      cache: "no-store"
+    });
+
+    if (!response.ok) {
+      throw new Error("Catálogo não encontrado");
+    }
+
+    const data = await response.json();
+    const materiais = [];
+
+    if (Array.isArray(data.assuntos)) {
+      data.assuntos.forEach(assunto => {
+        if (Array.isArray(assunto.materiais)) {
+          materiais.push(...assunto.materiais);
+        }
+      });
+    }
+
+    container.replaceChildren();
+
+  	if (materiais.length === 0) {
+  		container.textContent =
+   		 "Nenhum vídeo disponível no momento.";
+ 	 return;
+	}
+
+    const codificarCaminho = caminho =>
+      caminho.split("/").map(encodeURIComponent).join("/");
+
+    materiais.forEach(material => {
+      const arquivo = material.arquivo;
+
+      if (typeof arquivo !== "string" || !arquivo) {
+        return;
+      }
+
+      const titulo = material.titulo || arquivo;
+      const extensao = arquivo.split(".").pop().toLowerCase();
+
+      const item = document.createElement("div");
+      item.className = "resource";
+
+      const informacoes = document.createElement("div");
+
+      const nome = document.createElement("strong");
+      nome.textContent = titulo;
+
+      const tipo = document.createElement("span");
+      tipo.className = "type";
+      tipo.textContent = extensao.toUpperCase() + " · " + arquivo;
+
+      informacoes.append(nome, tipo);
+
+      const botao = document.createElement("a");
+      botao.className = "btn";
+      botao.href = codificarCaminho(arquivo);
+      botao.target = "_blank";
+      botao.rel = "noopener noreferrer";
+      botao.textContent = "Abrir vídeo";
+
+      item.append(informacoes, botao);
+      container.appendChild(item);
+    });
+
+  } catch (erro) {
+    container.textContent =
+      "Não foi possível carregar o catálogo de materiais.";
+
+    console.error(erro);
+  }
+}
+
+carregarMateriais();
+</script>
+
+</body>
+</html>
