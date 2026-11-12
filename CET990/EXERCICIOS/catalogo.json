@@ -4,28 +4,23 @@
   "categoria": "EXERCICIOS",
   "assuntos": [
     {
-      "id": "GERAL",
-      "nome": "Geral",
-      "materiais": [
-        {
-          "titulo": "APOSTILA INSTRUMENTACAO COMPUTACIONAL",
-          "arquivo": "APOSTILA-INSTRUMENTACAO-COMPUTACIONAL.pdf",
-          "tipo": "pdf"
-        },
-        {
-          "titulo": "LABORATORIO 03 PRESSAO NIVEL",
-          "arquivo": "LABORATORIO-03-PRESSAO-NIVEL.pdf",
-          "tipo": "pdf"
-        }
-      ]
-    },
-    {
       "id": "PRESSAO",
       "nome": "Pressão",
       "materiais": [
         {
           "titulo": "LABORATORIO 03 PRESSAO NIVEL",
           "arquivo": "PRESSAO/LABORATORIO-03-PRESSAO-NIVEL.pdf",
+          "tipo": "pdf"
+        }
+      ]
+    },
+    {
+      "id": "TEMPERATURA",
+      "nome": "Temperatura",
+      "materiais": [
+        {
+          "titulo": "APOSTILA INSTRUMENTACAO COMPUTACIONAL",
+          "arquivo": "TEMPERATURA/APOSTILA-INSTRUMENTACAO-COMPUTACIONAL.pdf",
           "tipo": "pdf"
         }
       ]
