@@ -54,6 +54,16 @@
       "nome": "Redes Neurais",
       "materiais": [
         {
+          "titulo": "Aula 1 0 Redes Neurais Apresentacao",
+          "arquivo": "REDES_NEURAIS/Aula_1_0_Redes_Neurais_Apresentacao.ipynb",
+          "tipo": "ipynb"
+        },
+        {
+          "titulo": "Aula 1 1 Redes Neurais Apresentacao",
+          "arquivo": "REDES_NEURAIS/Aula_1_1_Redes_Neurais_Apresentacao.ipynb",
+          "tipo": "ipynb"
+        },
+        {
           "titulo": "Aula 1 2 Redes Neurais Exercicios",
           "arquivo": "REDES_NEURAIS/Aula_1_2_Redes_Neurais_Exercicios.ipynb",
           "tipo": "ipynb"
@@ -71,16 +81,6 @@
         {
           "titulo": "Aula 1 5 RNA Exercicios Eng Quimica",
           "arquivo": "REDES_NEURAIS/Aula_1_5_RNA_Exercicios_Eng_Quimica.ipynb",
-          "tipo": "ipynb"
-        },
-        {
-          "titulo": "Aula 1 0 Redes Neurais Apresentacao",
-          "arquivo": "REDES_NEURAIS/Aula_1_0_Redes_Neurais_Apresentacao.ipynb",
-          "tipo": "ipynb"
-        },
-        {
-          "titulo": "Aula 1 1 Redes Neurais Apresentacao",
-          "arquivo": "REDES_NEURAIS/Aula_1_1_Redes_Neurais_Apresentacao.ipynb",
           "tipo": "ipynb"
         }
       ]
