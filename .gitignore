@@ -8,6 +8,9 @@ links.txt
 bloco_nota_links_AI.txt
 ORIENTACOES_LATES
 Links estudo GPT
+%----------------------------------
+% Arquivos temporarios do Jupyter
+.ipynb_checkpoints/ 
 %-----------------------------------
 % Acessar site Aula_01_CET1006_Transformada_Laplace%
 %-----------------------------------
