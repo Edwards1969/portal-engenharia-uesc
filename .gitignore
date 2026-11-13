@@ -9,6 +9,9 @@ bloco_nota_links_AI.txt
 ORIENTACOES_LATES
 Links estudo GPT
 %----------------------------------
+# Configurações locais do Visual Studio Code
+.vscode/
+%----------------------------------
 % Arquivos temporarios do Jupyter
 .ipynb_checkpoints/ 
 %-----------------------------------
