@@ -1,0 +1,29 @@
+
+
+{
+  "name": "Portal Engenharia Química",
+  "short_name": "Engenharia Química",
+  "description": "Ambiente acadêmico de ensino e recursos educacionais de Engenharia da UESC.",
+  "lang": "pt-BR",
+  "id": "/portal-engenharia-uesc/",
+  "start_url": "/portal-engenharia-uesc/",
+  "scope": "/portal-engenharia-uesc/",
+  "display": "standalone",
+  "background_color": "#f7f9fb",
+  "theme_color": "#123b61",
+  "icons": [
+    {
+      "src": "img/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "img/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
+
