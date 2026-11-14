@@ -264,6 +264,7 @@ search.addEventListener('input', () => {
     toggle.addEventListener('click',()=>setMenu(!sidebar.classList.contains('open')));
     backdrop.addEventListener('click',()=>setMenu(false));
     document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
+	sidebar.querySelectorAll('.side-links a').forEach(link => link.addEventListener('click', () => setMenu(false)));
   </script>
 </body>
 </html>
