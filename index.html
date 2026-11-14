@@ -73,6 +73,37 @@
     }
     @media(max-width:650px) { .cards { grid-template-columns:1fr; } .search-wrap { order:5; width:100%; } .header-inner { flex-wrap:wrap; } }
     @media(max-width:450px) { .header-inner { padding:12px; gap:10px; } .brand strong { font-size:19px; } .brand span { font-size:10px; } .mark { width:40px; height:40px; } }
+
+    /* Nossa Filosofia */
+    .filosofia {
+      margin-top: 28px;
+      padding: 30px 34px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--navy);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .filosofia h2 {
+      margin: 0 0 20px;
+      color: var(--dark);
+      font-size: 21px;
+    }
+
+    .filosofia blockquote {
+      margin: 0;
+      color: var(--navy);
+      font-size: 19px;
+      font-style: italic;
+      line-height: 1.8;
+    }
+
+    .filosofia p {
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }	
   </style>
 </head>
 <body>
@@ -181,7 +212,18 @@
         <p class="sidebar-note">Biblioteca CET002: 25 notebooks organizados por áreas de conhecimento, com acesso direto aos materiais e acompanhamento do progresso de estudos.
 </p>
       </section>
+      <section class="filosofia">
+        <h2>Nossa Filosofia</h2>
+
+        <blockquote>
+          “O conhecimento produzido pelo professor não deve se encerrar ao final de cada semestre; deve permanecer, evoluir e continuar formando novas gerações de engenheiros.”
+        </blockquote>
+
+  		<p>Portal Engenharia UESC — Ensino, conhecimento e formação continuada</p>
+      </section>
+
       <footer>Engenharia UESC • Portal de Ensino e Recursos Educacionais</footer>
+
     </main>
   </div>
   <script>
