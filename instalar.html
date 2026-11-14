@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Instalação do aplicativo Portal Engenharia Química da UESC.">
+
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#123b61">
+
+  <title>Instalar Aplicativo | Portal Engenharia UESC</title>
+
+  <style>
+    :root {
+      --navy: #123b61;
+      --dark: #082d4d;
+      --muted: #64748b;
+      --line: #e2e8f0;
+      --bg: #f7f9fb;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #263747;
+      background: var(--bg);
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--line);
+      padding: 22px 24px;
+      text-align: center;
+    }
+
+    header h1 {
+      color: var(--dark);
+      font-size: 26px;
+      margin: 0 0 8px;
+    }
+
+    header p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 14px;
+    }
+
+    main {
+      max-width: 1050px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .intro h2 {
+      color: var(--dark);
+      font-size: 25px;
+    }
+
+    .intro p {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 26px;
+    }
+
+    .card h3 {
+      color: var(--navy);
+      margin-top: 0;
+    }
+
+    .card p, .card li {
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .card ol {
+      padding-left: 22px;
+    }
+
+    .qr-section {
+      margin-top: 30px;
+      padding: 30px;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    .qr-section h2 {
+      color: var(--dark);
+    }
+
+    .qr-section a {
+      color: var(--navy);
+      overflow-wrap: anywhere;
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 20px;
+      color: white;
+      background: var(--navy);
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 30px 15px;
+    }
+
+    @media (max-width: 700px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 22px;
+      }
+
+      main {
+        margin: 25px auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Portal Engenharia Química</h1>
+    <p>Engenharia UESC — Ensino e Recursos Educacionais</p>
+  </header>
+
+  <main>
+
+    <section class="intro">
+      <h2>Instale o Portal no seu dispositivo</h2>
+      <p>
+        Tenha acesso às disciplinas, notebooks e materiais
+        educacionais diretamente pelo computador, tablet ou celular.
+      </p>
+    </section>
+
+    <section class="cards">
+
+      <article class="card">
+        <h3>Computador — Windows</h3>
+        <p>Instalação pelo Microsoft Edge:</p>
+        <ol>
+          <li>Abra o Portal no Microsoft Edge.</li>
+          <li>Clique no menu de três pontos (...).</li>
+          <li>Selecione Aplicativos.</li>
+          <li>Escolha Instalar este site como aplicativo.</li>
+          <li>Confirme a instalação.</li>
+        </ol>
+      </article>
+
+      <article class="card">
+        <h3>Celular — Android</h3>
+        <p>Instalação pelo Google Chrome:</p>
+        <ol>
+          <li>Abra o Portal no Chrome.</li>
+          <li>Toque no menu de três pontos.</li>
+          <li>Selecione Instalar aplicativo ou Adicionar à tela inicial.</li>
+          <li>Confirme a instalação.</li>
+        </ol>
+      </article>
+
+      <article class="card">
+        <h3>iPhone e iPad</h3>
+        <p>Instalação pelo Safari:</p>
+        <ol>
+          <li>Abra o Portal no Safari.</li>
+          <li>Abra o menu de compartilhamento.</li>
+          <li>Selecione Adicionar à Tela de Início.</li>
+          <li>Confirme a operação.</li>
+        </ol>
+      </article>
+
+      <article class="card">
+        <h3>Tablet — Android</h3>
+        <p>Instalação pelo Google Chrome:</p>
+        <ol>
+          <li>Abra o Portal no Chrome do tablet.</li>
+          <li>Toque no menu do navegador.</li>
+          <li>Selecione Instalar aplicativo ou Adicionar à tela inicial.</li>
+          <li>Confirme a instalação.</li>
+        </ol>
+      </article>
+
+    </section>
+
+    <section class="qr-section">
+      <h2>Acesso pelo QR Code</h2>
+      <p>
+  Aponte a câmera do celular ou tablet para acessar
+  a página de instalação do Portal Engenharia Química.
+</p>
+
+<img
+  src="img/qr-instalar-portal-engenharia-uesc.png"
+  alt="QR Code para instalar o Portal Engenharia Química"
+  width="220"
+  height="220"
+  style="display:block; margin:20px auto;"
+>
+
+<p>
+  <a href="https://edwards1969.github.io/portal-engenharia-uesc/instalar.html">
+    https://edwards1969.github.io/portal-engenharia-uesc/instalar.html
+  </a>
+</p>
+      <p>
+        <a href="index.html">
+          Acessar o Portal Engenharia UESC
+        </a>
+      </p>
+    </section>
+
+    <a class="back" href="javascript:history.back()">
+ 	 ← Voltar à página anterior
+	</a>
+
+	<a class="back" href="index.html">
+ 		Ir para a página inicial
+	</a>
+
+  </main>
+
+  <footer>
+    Engenharia UESC • Portal de Ensino e Recursos Educacionais
+  </footer>
+
+</body>
+</html>
