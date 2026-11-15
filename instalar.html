@@ -245,10 +245,14 @@
 	</p>
 
 	<p>
-  	  <a class="back"
-     href="https://edwards1969.github.io/portal-engenharia-uesc/">
-    Abrir Portal Engenharia Química
-  	  </a>
+  	  <button
+  id="btn-instalar"
+  class="back"
+  type="button"
+  style="border: none; cursor: pointer; font-size: 16px;"
+>
+  ↓ Instalar aplicativo
+</button>
 	</p>
     </section>
 
@@ -265,6 +269,49 @@
   <footer>
     Engenharia UESC • Portal de Ensino e Recursos Educacionais
   </footer>
+
+  <script>
+  let eventoInstalacao = null;
+
+  const botaoInstalar = document.getElementById("btn-instalar");
+
+  window.addEventListener("beforeinstallprompt", (evento) => {
+    evento.preventDefault();
+    eventoInstalacao = evento;
+  });
+
+  botaoInstalar.addEventListener("click", async () => {
+    if (eventoInstalacao) {
+      const evento = eventoInstalacao;
+      eventoInstalacao = null;
+
+      await evento.prompt();
+      await evento.userChoice;
+      return;
+    }
+
+    const iphoneOuIpad =
+      /iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+      (navigator.platform === "MacIntel" &&
+       navigator.maxTouchPoints > 1);
+
+    if (iphoneOuIpad) {
+      alert(
+        "Para instalar o Portal no iPhone ou iPad:\n\n" +
+        "1. Abra esta página no Safari.\n" +
+        "2. Toque em Compartilhar.\n" +
+        "3. Selecione Adicionar à Tela de Início.\n" +
+        "4. Confirme a instalação."
+      );
+    } else {
+      alert(
+        "A instalação direta não está disponível neste navegador.\n\n" +
+        "No Chrome ou Edge, abra o menu do navegador " +
+        "e procure a opção Instalar aplicativo."
+      );
+    }
+  });
+</script>
 
 </body>
 </html>
