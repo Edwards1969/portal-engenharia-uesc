@@ -171,6 +171,29 @@
     gap: 10px;
   }
 
+.titulo-computador {
+  display: inline;
+}
+
+.titulo-celular {
+  display: none;
+}
+
+.titulo-celular small {
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+  margin-top: 3px;
+}
+
+.titulo-computador {
+  display: none;
+}
+
+.titulo-celular {
+  display: block;
+}
+
   header h1 {
     font-size: 14px;
     line-height: 1.3;
@@ -202,10 +225,18 @@
 
 <body>
 
-
 <header>
   <div class="cabecalho-conteudo">
-    <h1>Engenharia UESC | Materiais Didáticos</h1>
+    <h1>
+      <span class="titulo-computador">
+        Engenharia UESC | Materiais Didáticos
+      </span>
+
+      <span class="titulo-celular">
+        Engenharia UESC
+        <small>Materiais Didáticos</small>
+      </span>
+    </h1>
 
     <a id="voltar-mobile"
        class="botao-voltar-mobile"
