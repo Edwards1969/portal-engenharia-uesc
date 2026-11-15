@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+
+  <title>Visualizador de Materiais | Engenharia UESC</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f9fb;
+      color: #263747;
+    }
+
+    header {
+      background: #123b61;
+      color: white;
+      padding: 16px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .barra {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      padding: 14px;
+      background: white;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .botao {
+      display: inline-block;
+      padding: 11px 15px;
+      background: #123b61;
+      color: white;
+      border-radius: 7px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .botao.secundario {
+      background: #e8eef4;
+      color: #123b61;
+    }
+
+    main {
+      padding: 14px;
+    }
+
+    #titulo {
+      font-size: 18px;
+      overflow-wrap: anywhere;
+    }
+
+    #documento {
+      width: 100%;
+      height: 75vh;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: white;
+    }
+
+    .mensagem {
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 17px;
+      }
+
+      #documento {
+        height: 70vh;
+      }
+    }
+
+	[hidden] {
+    display: none !important;
+}
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Engenharia UESC | Materiais Didáticos</h1>
+</header>
+
+<nav class="barra" aria-label="Navegação do material">
+  <a id="voltar" class="botao" href="index.html">
+    ← Voltar à disciplina
+  </a>
+
+  <a id="abrir" class="botao secundario"
+     href="index.html" target="_blank"
+     rel="noopener noreferrer" hidden>
+    Abrir documento externamente
+  </a>
+</nav>
+
+<main>
+  <h2 id="titulo">Material didático</h2>
+
+  <div id="conteudo" class="mensagem">
+    Preparando o documento...
+  </div>
+</main>
+
+<script>
+  const parametros = new URLSearchParams(location.search);
+
+  const arquivo = parametros.get("arquivo");
+  const retorno = parametros.get("retorno");
+  const titulo = parametros.get("titulo") || "Material didático";
+
+  const tituloElemento = document.getElementById("titulo");
+  const conteudo = document.getElementById("conteudo");
+  const botaoVoltar = document.getElementById("voltar");
+  const botaoAbrir = document.getElementById("abrir");
+
+  tituloElemento.textContent = titulo;
+
+  const raizPortal = new URL("./", location.href);
+
+  function enderecoSeguro(valor, permitirGitHub = false) {
+    if (!valor) return null;
+
+    try {
+      const url = new URL(valor, raizPortal);
+
+      if (url.protocol !== "https:" &&
+          url.protocol !== "http:") {
+        return null;
+      }
+
+      if (url.origin === raizPortal.origin &&
+          url.pathname.startsWith(raizPortal.pathname)) {
+        return url;
+      }
+
+      if (permitirGitHub &&
+          url.protocol === "https:" &&
+          url.hostname === "github.com" &&
+          url.pathname.startsWith(
+            "/Edwards1969/portal-engenharia-uesc/")) {
+        return url;
+      }
+
+      return null;
+    } catch {
+      return null;
+    }
+  }
+
+  const destinoRetorno = enderecoSeguro(retorno);
+  botaoVoltar.href = destinoRetorno
+    ? destinoRetorno.href
+    : raizPortal.href;
+
+  const destinoArquivo = enderecoSeguro(arquivo, true);
+
+  if (!destinoArquivo) {
+	botaoAbrir.hidden = true;
+    conteudo.textContent =
+      "Documento não informado ou endereço inválido.";
+  } else {
+    botaoAbrir.href = destinoArquivo.href;
+    botaoAbrir.hidden = false;
+
+    const extensao = destinoArquivo.pathname
+      .split(".").pop().toLowerCase();
+
+    if (extensao === "pdf" &&
+        destinoArquivo.origin === raizPortal.origin) {
+
+      const iframe = document.createElement("iframe");
+      iframe.id = "documento";
+      iframe.title = titulo;
+      iframe.src = destinoArquivo.href;
+
+      conteudo.replaceWith(iframe);
+
+    } else {
+      conteudo.innerHTML = "";
+
+      const mensagem = document.createElement("p");
+      mensagem.textContent =
+        "Este material pode ser consultado pelo botão " +
+        "'Abrir documento externamente'. " +
+        "A página do Portal permanecerá disponível " +
+        "para seu retorno.";
+
+      conteudo.appendChild(mensagem);
+    }
+  }
+</script>
+
+</body>
+</html>

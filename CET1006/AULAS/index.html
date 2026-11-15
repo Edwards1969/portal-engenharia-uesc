@@ -310,15 +310,22 @@
 
           informacoes.append(nome, tipo);
 
-          const botao = document.createElement("a");
-          botao.className = "botao";
-          botao.href = url;
-          botao.target = "_blank";
-          botao.rel = "noopener noreferrer";
-          botao.textContent = textoBotao;
+        const botao = document.createElement("a");
+        botao.className = "botao";
 
-          item.append(informacoes, botao);
-          container.appendChild(item);
+		const parametrosVisualizador = new URLSearchParams({
+   		  arquivo: new URL(url, window.location.href).href,
+          retorno: window.location.href,
+          titulo: titulo
+        });
+
+		botao.href = "../../visualizador.html?" + parametrosVisualizador.toString();          
+		botao.target = "_blank";
+        botao.rel = "noopener noreferrer";
+        botao.textContent = textoBotao;
+
+        item.append(informacoes, botao);
+        container.appendChild(item);
         });
 
       } catch (erro) {
