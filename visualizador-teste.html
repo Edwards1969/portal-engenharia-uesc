@@ -148,14 +148,73 @@
         gap: 8px;
       }
     }
+
+/* Navegação compacta para celulares */
+
+.botao-voltar-mobile {
+  display: none;
+}
+
+@media (hover: none) and (pointer: coarse) {
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 12px;
+  }
+
+  .cabecalho-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  header h1 {
+    font-size: 14px;
+    line-height: 1.3;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .botao-voltar-mobile {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    min-height: 40px;
+    padding: 8px 10px;
+    background: white;
+    color: #123b61;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .barra {
+    display: none;
+  }
+}
   </style>
 </head>
 
 <body>
 
+
 <header>
-  <h1>Engenharia UESC | Materiais Didáticos</h1>
+  <div class="cabecalho-conteudo">
+    <h1>Engenharia UESC | Materiais Didáticos</h1>
+
+    <a id="voltar-mobile"
+       class="botao-voltar-mobile"
+       href="index.html">
+      ← Voltar à disciplina
+    </a>
+  </div>
 </header>
+
 
 <nav class="barra" aria-label="Navegação do material">
   <a id="voltar" class="botao" href="index.html">
@@ -188,6 +247,8 @@
   const conteudo = document.getElementById("conteudo");
   const botaoVoltar = document.getElementById("voltar");
   const botaoAbrir = document.getElementById("abrir");
+  const botaoVoltarMobile =
+  document.getElementById("voltar-mobile");
 
   tituloElemento.textContent = titulo;
 
@@ -227,6 +288,7 @@
   botaoVoltar.href = destinoRetorno
     ? destinoRetorno.href
     : raizPortal.href;
+	botaoVoltarMobile.href = botaoVoltar.href;
 
   const destinoArquivo = enderecoSeguro(arquivo, true);
 
@@ -243,9 +305,10 @@
     if (extensao === "pdf" &&
         destinoArquivo.origin === raizPortal.origin) {
 
-      const celular = window.matchMedia(
-        "(max-width: 700px)"
-      ).matches;
+      
+		const celular = window.matchMedia(
+  		"(hover: none) and (pointer: coarse)"
+		).matches;
 
       if (!celular) {
         const iframe = document.createElement("iframe");
