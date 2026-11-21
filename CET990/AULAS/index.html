@@ -37,7 +37,30 @@
         info.append(strong,small);
         const link = document.createElement('a');
         link.className = 'botao';
-        link.href = material.tipo === 'ipynb' ? base+encodePath(material.arquivo) : encodePath(material.arquivo);
+
+
+		if (material.tipo === 'pdf') {
+
+			const parametrosVisualizador = new URLSearchParams({
+				arquivo: new URL(encodePath(material.arquivo), window.location.href).href,
+				retorno: window.location.href,
+				titulo: material.titulo
+			});
+
+			link.href = "../../visualizador.html?" +
+				parametrosVisualizador.toString();
+
+			} else if (material.tipo === 'ipynb') {
+
+			link.href = base + encodePath(material.arquivo);
+
+			} else {
+
+			link.href = encodePath(material.arquivo);
+
+			}
+
+
         link.target = '_blank';
         link.rel = 'noopener noreferrer';
         link.textContent = material.tipo === 'pdf' ? 'Abrir PDF' : material.tipo === 'ipynb' ? 'Ver notebook' : 'Abrir arquivo';
@@ -83,4 +106,28 @@
     });
   } catch(error) { console.warn('Catálogo indisponível; usando lista original.',error); }
 })();
+
+// Encaminha os PDFs da lista original ao visualizador central.
+document.querySelectorAll('.painel-assunto a[href]').forEach(link => {
+
+  const urlOriginal = link.getAttribute('href');
+
+  if (!urlOriginal || !/\.pdf(?:[?#]|$)/i.test(urlOriginal)) {
+    return;
+  }
+
+  const titulo = link.closest('.item')?.querySelector('strong')?.textContent
+    || 'Material didático';
+
+  const parametrosVisualizador = new URLSearchParams({
+    arquivo: new URL(urlOriginal, window.location.href).href,
+    retorno: window.location.href,
+    titulo: titulo
+  });
+
+  link.href = '../../visualizador.html?' +
+    parametrosVisualizador.toString();
+
+});
+
 </script></body></html>

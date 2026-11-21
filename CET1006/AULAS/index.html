@@ -319,8 +319,19 @@
           titulo: titulo
         });
 
-		botao.href = "../../visualizador-teste.html?" + parametrosVisualizador.toString();          
+		const dispositivoMovel = window.matchMedia(
+			"(hover: none) and (pointer: coarse), (max-width: 1100px) and (pointer: coarse)"
+		).matches;
+
+		if (extensao === "pdf") {
+			botao.href = "../../visualizador.html?" +
+				parametrosVisualizador.toString();
+		} else {
+			botao.href = url;
+		}
+		
 		botao.target = "_blank";
+
         botao.rel = "noopener noreferrer";
         botao.textContent = textoBotao;
 

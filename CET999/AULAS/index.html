@@ -331,7 +331,24 @@ async function carregarMateriais() {
 
       const botao = document.createElement("a");
       botao.className = "botao";
-      botao.href = url;
+
+	if (extensao === "pdf") {
+
+		const parametrosVisualizador = new URLSearchParams({
+			arquivo: new URL(url, window.location.href).href,
+			retorno: window.location.href,
+			titulo: titulo
+		});
+
+		botao.href = "../../visualizador.html?" +
+			parametrosVisualizador.toString();
+
+		} else {
+
+		botao.href = url;
+
+		}
+
       botao.target = "_blank";
       botao.rel = "noopener noreferrer";
       botao.textContent = textoBotao;

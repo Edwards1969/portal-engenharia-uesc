@@ -230,8 +230,10 @@
 
 	<p>
 		Os notebooks Jupyter apresentam fundamentos, exemplos
-		e aplicações práticas, podendo ser consultados
-		diretamente no GitHub.
+    	e aplicações práticas, podendo ser consultados
+    	diretamente no GitHub. Os documentos PDF, quando
+    	disponíveis, poderão ser visualizados diretamente
+    	no Portal Engenharia UESC.
 	</p>
 
 	<h2>Materiais disponíveis por assunto</h2>
@@ -345,7 +347,24 @@
 
           const botao = document.createElement("a");
           botao.className = "botao";
-          botao.href = url;
+
+        if (extensao === "pdf") {
+
+			const parametrosVisualizador = new URLSearchParams({
+				arquivo: new URL(url, window.location.href).href,
+				retorno: window.location.href,
+				titulo: titulo
+			});
+
+			botao.href = "../../visualizador.html?" +
+				parametrosVisualizador.toString();
+
+			} else {
+
+			botao.href = url;
+
+			}
+
           botao.target = "_blank";
           botao.rel = "noopener noreferrer";
           botao.textContent = textoBotao;
