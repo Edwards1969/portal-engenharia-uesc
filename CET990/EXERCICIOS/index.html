@@ -37,10 +37,35 @@
         info.append(strong,small);
         const link = document.createElement('a');
         link.className = 'botao';
-        link.href = material.tipo === 'ipynb' ? base+encodePath(material.arquivo) : encodePath(material.arquivo);
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-        link.textContent = material.tipo === 'pdf' ? 'Abrir PDF' : material.tipo === 'ipynb' ? 'Ver notebook' : 'Abrir arquivo';
+		if (material.tipo === 'pdf') {
+			const parametrosVisualizador = new URLSearchParams({
+				arquivo: new URL(
+				encodePath(material.arquivo),
+				window.location.href
+				).href,
+				retorno: window.location.href,
+				titulo: material.titulo
+			});
+
+			link.href = "../../visualizador.html?" +
+				parametrosVisualizador.toString();
+
+			link.target = "_self";
+
+			} else {
+			link.href = material.tipo === 'ipynb'
+				? base + encodePath(material.arquivo)
+				: encodePath(material.arquivo);
+
+			link.target = "_blank";
+			link.rel = "noopener noreferrer";
+			}
+
+			link.textContent = material.tipo === 'pdf'
+			? 'Abrir PDF'
+			: material.tipo === 'ipynb'
+				? 'Ver notebook'
+				: 'Abrir arquivo';
         item.append(info,link);
         list.appendChild(item);
       }
@@ -83,4 +108,34 @@
     });
   } catch(error) { console.warn('Catálogo indisponível; usando lista original.',error); }
 })();
-</script></body></html>
+</script>
+
+<script>
+document.querySelectorAll(
+  '.painel-assunto a[href]'
+).forEach(link => {
+
+  const caminho = link.getAttribute('href');
+
+  if (!caminho || !/\.pdf(?:[?#]|$)/i.test(caminho)) {
+		return;
+	}
+
+	const parametrosVisualizador = new URLSearchParams({
+		arquivo: new URL(caminho, window.location.href).href,
+		retorno: window.location.href,
+		titulo: link.closest('.item')?.querySelector('strong')?.textContent
+		|| 'Documento PDF'
+	});
+
+	link.href = '../../visualizador.html?' +
+		parametrosVisualizador.toString();
+
+	link.target = '_self';
+	link.removeAttribute('rel');
+
+});
+</script>
+
+</body>
+</html>

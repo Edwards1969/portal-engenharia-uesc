@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<span class="codigo">CET1012 · Exercícios</span>
+<title>CET1012 — Exercícios | Engenharia UESC</title>
 
 <style>
 :root {
@@ -195,8 +195,10 @@ footer {
 
 <p>
 Consulte as listas de exercícios e atividades práticas
-da disciplina. Arquivos PDF abrem diretamente no navegador.
-Notebooks Jupyter e códigos Python são visualizados no GitHub.
+da disciplina. Os documentos PDF são visualizados
+diretamente no Portal Engenharia UESC.
+Notebooks Jupyter e códigos Python são
+visualizados no GitHub.
 </p>
 
 <h2>Materiais disponíveis</h2>
@@ -269,9 +271,18 @@ async function carregarMateriais() {
       let url;
       let textoBotao;
 
-      if (extensao === "pdf") {
-        url = codificarCaminho(arquivo);
-        textoBotao = "Abrir PDF";
+		if (extensao === "pdf") {
+			const parametrosVisualizador = new URLSearchParams({
+				arquivo: new URL(
+				codificarCaminho(arquivo),
+				window.location.href
+				).href,
+				retorno: window.location.href,
+				titulo: titulo
+		});
+		url = "../../visualizador.html?" +
+			parametrosVisualizador.toString();
+		textoBotao = "Abrir PDF";
       } else if (extensao === "ipynb") {
         url = githubBase + codificarCaminho(arquivo);
         textoBotao = "Abrir Notebook";
@@ -301,9 +312,15 @@ async function carregarMateriais() {
       const botao = document.createElement("a");
       botao.className = "botao";
       botao.href = url;
-      botao.target = "_blank";
-      botao.rel = "noopener noreferrer";
-      botao.textContent = textoBotao;
+
+	if (extensao === "pdf") {
+		botao.target = "_self";
+	} else {
+		botao.target = "_blank";
+		botao.rel = "noopener noreferrer";
+	}
+
+	botao.textContent = textoBotao;
 
       item.append(informacoes, botao);
       container.appendChild(item);

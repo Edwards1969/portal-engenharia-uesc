@@ -11,7 +11,7 @@
   <p>Carregando materiais...</p>
 </div>
 
-<a class="back" href="../index.html">← Voltar</a>
+<a class="back" href="../index.html">← Voltar à disciplina CET990</a>
 
 </section>
 </main>
@@ -76,9 +76,19 @@ async function carregarMateriais() {
 
       const botao = document.createElement("a");
       botao.className = "btn";
-      botao.href = codificarCaminho(arquivo);
-      botao.target = "_blank";
-      botao.rel = "noopener noreferrer";
+        const parametrosVisualizador = new URLSearchParams({
+			arquivo: new URL(
+			codificarCaminho(arquivo),
+			window.location.href
+			).href,
+			retorno: window.location.href,
+			titulo: material.titulo || arquivo
+		});
+
+      botao.href = "../../visualizador.html?" +
+        parametrosVisualizador.toString();
+
+      botao.target = "_self";
       botao.textContent = "Abrir PDF";
 
       item.append(informacoes, botao);

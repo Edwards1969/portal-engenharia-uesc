@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<span class="codigo">CET1011 · Slides</span>
+<title>CET1011 — Slides | Engenharia UESC</title>
 
 <style>
 :root {
@@ -194,7 +194,9 @@ footer {
 <h1>Engenharia Auxiliada por Computador</h1>
 
 <p>
-Consulte as apresentações e os materiais de apoio da disciplina. Arquivos PDF abrem diretamente no navegador.
+Consulte as apresentações e os materiais de apoio
+da disciplina. Os documentos PDF são visualizados
+diretamente no Portal Engenharia UESC.
 Notebooks Jupyter e códigos Python são
 visualizados no GitHub.
 </p>
@@ -269,8 +271,19 @@ async function carregarMateriais() {
       let url;
       let textoBotao;
 
-      if (extensao === "pdf") {
-        url = codificarCaminho(arquivo);
+        if (extensao === "pdf") {
+        const parametrosVisualizador = new URLSearchParams({
+          arquivo: new URL(
+            codificarCaminho(arquivo),
+            window.location.href
+          ).href,
+          retorno: window.location.href,
+          titulo: titulo
+        });
+
+        url = "../../visualizador.html?" +
+          parametrosVisualizador.toString();
+
         textoBotao = "Abrir PDF";
       } else if (extensao === "ipynb") {
         url = githubBase + codificarCaminho(arquivo);
@@ -301,8 +314,13 @@ async function carregarMateriais() {
       const botao = document.createElement("a");
       botao.className = "botao";
       botao.href = url;
-      botao.target = "_blank";
-      botao.rel = "noopener noreferrer";
+
+      if (extensao === "pdf") {
+        botao.target = "_self";
+      } else {
+        botao.target = "_blank";
+        botao.rel = "noopener noreferrer";
+      }
       botao.textContent = textoBotao;
 
       item.append(informacoes, botao);

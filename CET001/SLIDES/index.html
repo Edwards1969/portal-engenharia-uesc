@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>CET001 — Vídeos | Engenharia UESC</title>
+  <title>CET001 — Slides | Engenharia UESC</title>
 
   <style>
     :root {
@@ -203,7 +203,11 @@
       <h1>Python Aplicado às Engenharias</h1>
 
       <p>
-        Consulte apresentações e materiais visuais complementares sobre programação em Python e suas aplicações nas diferentes áreas da Engenharia. Os arquivos disponíveis são apresentadosautomaticamente a partir do catálogo.
+        Consulte as apresentações e os materiais visuais
+  		complementares sobre programação em Python e suas
+  		aplicações nas diferentes áreas da Engenharia.
+  		Os documentos PDF são visualizados diretamente
+  		no Portal Engenharia UESC. Os materiais disponíveis são apresentados automaticamente a partir do catálogo.
       </p>
 
       <h2>Materiais disponíveis</h2>
@@ -277,8 +281,19 @@
           let url;
           let textoBotao;
 
-          if (extensao === "pdf") {
-            url = codificarCaminho(arquivo);
+            if (extensao === "pdf") {
+				const parametrosVisualizador = new URLSearchParams({
+				arquivo: new URL(
+					codificarCaminho(arquivo),
+					window.location.href
+				).href,
+				retorno: window.location.href,
+				titulo: titulo
+            });
+
+            url = "../../visualizador.html?" +
+              parametrosVisualizador.toString();
+
             textoBotao = "Abrir PDF";
           } else if (extensao === "ipynb") {
             url = githubBase + codificarCaminho(arquivo);
@@ -309,8 +324,13 @@
           const botao = document.createElement("a");
           botao.className = "botao";
           botao.href = url;
-          botao.target = "_blank";
-          botao.rel = "noopener noreferrer";
+
+          if (extensao === "pdf") {
+            botao.target = "_self";
+          } else {
+            botao.target = "_blank";
+            botao.rel = "noopener noreferrer";
+          }
           botao.textContent = textoBotao;
 
           item.append(informacoes, botao);

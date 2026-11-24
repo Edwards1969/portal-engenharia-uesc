@@ -204,9 +204,9 @@
 
       <p>
         Consulte os slides e materiais de apresentação
-        utilizados nas atividades da disciplina.
-        Os arquivos PDF podem ser abertos diretamente
-        no navegador.
+  		utilizados nas atividades da disciplina.
+  		Os documentos PDF são visualizados diretamente
+  		no Portal Engenharia UESC.
       </p>
 
       <h2>Materiais disponíveis</h2>
@@ -280,9 +280,22 @@
           let url;
           let textoBotao;
 
-          if (extensao === "pdf") {
-            url = codificarCaminho(arquivo);
-            textoBotao = "Abrir PDF";
+          
+		if (extensao === "pdf") {
+		const parametrosVisualizador = new URLSearchParams({
+			arquivo: new URL(
+			codificarCaminho(arquivo),
+			window.location.href
+			).href,
+			retorno: window.location.href,
+			titulo: titulo
+		});
+
+		url = "../../visualizador.html?" +
+			parametrosVisualizador.toString();
+
+		textoBotao = "Abrir PDF";
+
           } else if (extensao === "ipynb") {
             url = githubBase + codificarCaminho(arquivo);
             textoBotao = "Abrir Notebook";
@@ -311,10 +324,17 @@
 
           const botao = document.createElement("a");
           botao.className = "botao";
-          botao.href = url;
-          botao.target = "_blank";
-          botao.rel = "noopener noreferrer";
-          botao.textContent = textoBotao;
+          
+		botao.href = url;
+
+		if (extensao === "pdf") {
+			botao.target = "_self";
+		} else {
+			botao.target = "_blank";
+			botao.rel = "noopener noreferrer";
+		}
+
+		botao.textContent = textoBotao;
 
           item.append(informacoes, botao);
           container.appendChild(item);

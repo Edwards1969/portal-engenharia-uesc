@@ -195,7 +195,8 @@ footer {
 
 <p>
 Consulte as listas de exercícios e atividades práticas
-da disciplina. Arquivos PDF abrem diretamente no navegador.
+da disciplina. Os documentos PDF são visualizados
+diretamente no Portal Engenharia UESC.
 Notebooks Jupyter e códigos Python são visualizados no GitHub.
 </p>
 
@@ -270,8 +271,19 @@ async function carregarMateriais() {
       let textoBotao;
 
       if (extensao === "pdf") {
-        url = codificarCaminho(arquivo);
-        textoBotao = "Abrir PDF";
+		const parametrosVisualizador = new URLSearchParams({
+			arquivo: new URL(
+			codificarCaminho(arquivo),
+			window.location.href
+			).href,
+			retorno: window.location.href,
+			titulo: titulo
+		});
+
+  url = "../../visualizador.html?" +
+    parametrosVisualizador.toString();
+
+  textoBotao = "Abrir PDF";
       } else if (extensao === "ipynb") {
         url = githubBase + codificarCaminho(arquivo);
         textoBotao = "Abrir Notebook";
@@ -300,14 +312,19 @@ async function carregarMateriais() {
 
       const botao = document.createElement("a");
       botao.className = "botao";
-      botao.href = url;
-      botao.target = "_blank";
-      botao.rel = "noopener noreferrer";
-      botao.textContent = textoBotao;
+      botao.href = url; 
 
-      item.append(informacoes, botao);
-      container.appendChild(item);
-    });
+	  if (extensao === "pdf") {
+		botao.target = "_self";
+	  } else {
+		botao.target = "_blank";
+		botao.rel = "noopener noreferrer";
+	  }
+	  botao.textContent = textoBotao;
+
+	  item.append(informacoes, botao);
+	  container.appendChild(item);
+	  });
 
   } catch (erro) {
     container.textContent =
