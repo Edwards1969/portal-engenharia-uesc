@@ -8,8 +8,8 @@
       "nome": "Introdução",
       "materiais": [
         {
-          "titulo": "Aula Instalacao Anaconda Spyder",
-          "arquivo": "Aula-Instalacao-Anaconda-Spyder.pdf",
+          "titulo": "Aula Instalacao Anaconda Spyde",
+          "arquivo": "Aula-Instalacao-Anaconda-Spyde.pdf",
           "tipo": "pdf"
         }
       ]
@@ -43,6 +43,11 @@
           "titulo": "LABORATORIO 01 VAZAO",
           "arquivo": "VAZAO/LABORATORIO-01-VAZAO.pdf",
           "tipo": "pdf"
+        },
+        {
+          "titulo": "Medicao de Vazao em Processos Industriais",
+          "arquivo": "VAZAO/Medicao-de-Vazao-em-Processos-Industriais.pdf",
+          "tipo": "pdf"
         }
       ]
     },
@@ -51,19 +56,9 @@
       "nome": "Pressão",
       "materiais": [
         {
-          "titulo": "APOSTILA INSTRUMENTACAO COMPUTACIONAL",
-          "arquivo": "PRESSAO/APOSTILA-INSTRUMENTACAO-COMPUTACIONAL.pdf",
+          "titulo": "Medicao de Pressão e Nivel",
+          "arquivo": "PRESSAO/Medicao-de-Pressão-e-Nivel.pdf",
           "tipo": "pdf"
-        },
-        {
-          "titulo": "LABORATORIO 03 EXERCICIO 02 VERSAO PRATICA",
-          "arquivo": "PRESSAO/LABORATORIO-03-EXERCICIO-02-VERSAO-PRATICA.pdf",
-          "tipo": "pdf"
-        },
-        {
-          "titulo": "monitoramento pressao reator quimico",
-          "arquivo": "PRESSAO/monitoramento-pressao-reator-quimico.ipynb",
-          "tipo": "ipynb"
         }
       ]
     },
@@ -72,39 +67,9 @@
       "nome": "Temperatura",
       "materiais": [
         {
-          "titulo": "CET990 Temperatura 1 gabarito PID volume",
-          "arquivo": "TEMPERATURA/CET990_Temperatura_1_gabarito_PID_volume.ipynb",
-          "tipo": "ipynb"
-        },
-        {
-          "titulo": "CET990 Temperatura 1 projeto PID volume",
-          "arquivo": "TEMPERATURA/CET990_Temperatura_1_projeto_PID_volume.ipynb",
-          "tipo": "ipynb"
-        },
-        {
-          "titulo": "exercicio 04 temperataura",
-          "arquivo": "TEMPERATURA/exercicio-04-temperataura.ipynb",
-          "tipo": "ipynb"
-        },
-        {
-          "titulo": "exercicio 05 temperatura",
-          "arquivo": "TEMPERATURA/exercicio-05-temperatura.ipynb",
-          "tipo": "ipynb"
-        },
-        {
-          "titulo": "LABORATORIO 02 TEMPERATURA",
-          "arquivo": "TEMPERATURA/LABORATORIO-02-TEMPERATURA.pdf",
+          "titulo": "Medicao de Temperatura em Processos Industriais",
+          "arquivo": "TEMPERATURA/Medicao-de-Temperatura-em-Processos-Industriais.pdf",
           "tipo": "pdf"
-        },
-        {
-          "titulo": "reator",
-          "arquivo": "TEMPERATURA/reator.csv",
-          "tipo": "csv"
-        },
-        {
-          "titulo": "sensor ruidoso",
-          "arquivo": "TEMPERATURA/sensor_ruidoso.csv",
-          "tipo": "csv"
         }
       ]
     },
