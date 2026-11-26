@@ -108,6 +108,11 @@
           "tipo": "ipynb"
         },
         {
+          "titulo": "Selecao Materiais Reator CET1011",
+          "arquivo": "Selecao_Materiais_Reator_CET1011.ipynb",
+          "tipo": "ipynb"
+        },
+        {
           "titulo": "teste",
           "arquivo": "teste.py",
           "tipo": "py"
